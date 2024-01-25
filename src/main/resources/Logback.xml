@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appender name="Consola" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d %green([%thread]) %highlight(%level) %cyan(%logger{50}) - %msg%n
+			</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="Fichero" class="ch.qos.logback.core.FileAppender">
+		<file>curso2324_hibernate.log</file>
+		<encoder>
+			<pattern>%d [%thread] %-5level %-40logger{50} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	<!--  con additivity="false" evitamos que salga duplicado el registro (logger root y cada logger específico) -->
+	
+	<logger name ="org.hibernate.SQL" level="debug" additivity="false">
+		<appender-ref ref="Fichero"/> 
+		<appender-ref ref="Consola"/> 
+	</logger>
+	
+	<logger name ="org.hibernate.orm.jdbc.bind" level="trace" additivity="false">
+		<appender-ref ref="Fichero"/> 
+		<appender-ref ref="Consola"/> 
+	</logger>
+	
+	<logger name ="org.hibernate.stat" level="debug" additivity="false">
+		<appender-ref ref="Fichero"/> 
+		<appender-ref ref="Consola"/> 
+	</logger>
+	
+	<logger name ="org.hibernate.SQL_SLOW" level="info" additivity="false">
+		<appender-ref ref="Fichero"/> 
+		<appender-ref ref="Consola"/> 
+	</logger>
+	
+		
+	<logger name ="org.hibernate.cache" level="debug" additivity="false">
+		<appender-ref ref="Fichero"/> 
+		<appender-ref ref="Consola"/> 
+	</logger>
+	
+	<root level="INFO">
+		<appender-ref ref="Consola" />
+		<appender-ref ref="Fichero" />
+	</root>
+</configuration>
