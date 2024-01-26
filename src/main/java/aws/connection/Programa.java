@@ -32,19 +32,26 @@ public class Programa {
 		// Llama al método para insertar el libro en la tabla
 		// AWS_DDB_Libro.Create(AWS_DDB_Login.Logg(), tableName, libro);
 
-		// -------------------- BUSCAR 1 OBJETO --------------------
+		// -------------------- BUSCAR 1 OBJETO -------------------- OK
 		// String isbnToSearch = "ISBN-00000";
 		// String titleToSearch = "Libro 0";
 		
 		// AWS_DDB_Select.SelectLibro(AWS_DDB_Login.Logg(), tableName, isbnToSearch, titleToSearch);
 		
-		// -------------------- ELIMINAR 1 OBJETO --------------------
-		String isbnToDelete = "ISBN-00000";
-		String titleToDelete = "Libro 0";
+		// -------------------- ELIMINAR 1 OBJETO -------------------- OK
+		// String isbnToDelete = "ISBN-00000";
+		// String titleToDelete = "Libro 0";
 		
-		AWS_DDB_Libro.Delete(AWS_DDB_Login.Logg(), tableName, isbnToDelete, titleToDelete);
+		// AWS_DDB_Libro.Delete(AWS_DDB_Login.Logg(), tableName, isbnToDelete, titleToDelete);
 		
-		// -------------------- EDITAR 1 OBJETO --------------------
+		// -------------------- EDITAR 1 OBJETO -------------------- OK
+		// String isbnToUpdate = "ISBN-00001";
+		// String titleToUpdate = "Libro 1";
+		// String atribToUpdate = "Autor";
+		// String valueToUpdate = "Autor POPO";
+		
+		// AWS_DDB_Libro.Edit(AWS_DDB_Login.Logg(), tableName, isbnToUpdate, titleToUpdate, atribToUpdate, valueToUpdate);
+		
 
 	}
 
