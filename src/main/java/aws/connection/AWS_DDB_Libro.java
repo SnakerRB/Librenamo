@@ -2,8 +2,6 @@ package aws.connection;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
-
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 import software.amazon.awssdk.services.dynamodb.model.AttributeValue;
 import software.amazon.awssdk.services.dynamodb.model.DeleteItemRequest;

@@ -41,31 +41,6 @@ public class AWS_DDB_Select {
         }
     }
 
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	public static void SelectAll(DynamoDbClient dynamoDbClient, String tableName, String[] campos) {
 		// Realiza una consulta simple para listar todos los elementos
 		ScanRequest scanRequest = ScanRequest.builder().tableName(tableName)

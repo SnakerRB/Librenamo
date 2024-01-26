@@ -7,7 +7,7 @@ public class Programa {
 		// Nombre de la tabla en DynamoDB
 		String tableName = "Libros";
 
-		// -------------------- IMPORTAR OBJETOS DESDE JSON -------------------- ERROR
+		// -------------------- IMPORTAR OBJETOS DESDE JSON -------------------- OK
 		// Ruta al archivo JSON en la carpeta resources
 		// String jsonFilePath = "src/main/resources/libros.json";
 		
