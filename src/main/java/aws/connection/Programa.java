@@ -44,7 +44,7 @@ public class Programa {
 		
 		// AWS_DDB_Libro.Delete(AWS_DDB_Login.Logg(), tableName, isbnToDelete, titleToDelete);
 		
-		// -------------------- EDITAR 1 OBJETO -------------------- OK
+		// -------------------- EDITAR 1 OBJETO -------------------- Falta return con los nuevos datos
 		// String isbnToUpdate = "ISBN-00001";
 		// String titleToUpdate = "Libro 1";
 		// String atribToUpdate = "Autor";

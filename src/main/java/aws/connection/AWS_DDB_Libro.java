@@ -95,15 +95,9 @@ public class AWS_DDB_Libro {
 			try {
 				UpdateItemResponse updateItemResponse = dynamoDbClient.updateItem(updateItemRequest);
 				Map<String, AttributeValue> updatedItem = updateItemResponse.attributes();
-				System.out.println("Objeto actualizado exitosamente.");
+				System.out.println("Objeto actualizado exitosamente: " + updatedItem);
 
-				GetItemRequest getItemRequest2 = GetItemRequest.builder()
-						.tableName(tableName)
-						.key(keyToGet)
-						.build();
-				
-				Map<String, AttributeValue> item2 = dynamoDbClient.getItem(getItemRequest).item();
-				System.out.println(item2);
+				System.out.println(item);
 
 			} catch (DynamoDbException e) {
 				System.err.println("Error al actualizar el objeto: " + e.getMessage());
