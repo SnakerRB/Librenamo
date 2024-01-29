@@ -5,14 +5,14 @@ import software.amazon.awssdk.services.dynamodb.model.AttributeValue;
 public class Libro {
 
 	// -------------------- ATRIBUTOS --------------------
-	private AttributeValue ISBN;
-	private AttributeValue Anio;
-	private AttributeValue Autor;
-	private AttributeValue Editorial;
+	private AttributeValue ISBN;//
+	private AttributeValue Anio;//
+	private AttributeValue Autor;//
+	private AttributeValue Editorial;//
 	private AttributeValue Existencias;
-	private AttributeValue Genero;
+	private AttributeValue Genero;//
 	private AttributeValue Precio;
-	private AttributeValue Titulo;
+	private AttributeValue Titulo;//
 
 	// -------------------- CONSTRUCTOR --------------------
 	public Libro() {

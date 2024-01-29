@@ -32,10 +32,10 @@ public class AWS_DDB_Empleados {
 
             // Inserta el empleado en la tabla DynamoDB
             dynamoDbClient.putItem(putItemRequest);
-            LOGGER.info("Empleado insertado: " + empleado.getEmpleadoID().s());
+         //   LOGGER.info("Empleado insertado: " + empleado.getEmpleadoID().s());
 
         } catch (DynamoDbException e) {
-            LOGGER.error("Error al insertar el empleado: " + e.getMessage());
+           // LOGGER.error("Error al insertar el empleado: " + e.getMessage());
         } finally {
             dynamoDbClient.close();
         }
@@ -49,9 +49,9 @@ public class AWS_DDB_Empleados {
 
         try {
             dynamoDbClient.deleteItem(deleteItemRequest);
-            LOGGER.info("Empleado con clave de partición %s eliminado exitosamente.\n", empleadoID);
+           // LOGGER.info("Empleado con clave de partición %s eliminado exitosamente.\n", empleadoID);
         } catch (DynamoDbException e) {
-            LOGGER.error("Error al eliminar el empleado: " + e.getMessage());
+           // LOGGER.error("Error al eliminar el empleado: " + e.getMessage());
         } finally {
             dynamoDbClient.close();
         }
@@ -67,11 +67,11 @@ public class AWS_DDB_Empleados {
         Map<String, AttributeValue> item = dynamoDbClient.getItem(getItemRequest).item();
 
         if (item.isEmpty()) {
-            LOGGER.error("No se encontró ningún objeto con la clave de partición: " + empleadoID);
+          //  LOGGER.error("No se encontró ningún objeto con la clave de partición: " + empleadoID);
             return;
 
         } else {
-            LOGGER.info(item.toString());
+           // LOGGER.info(item.toString());
 
             // Actualiza el atributo del objeto
             UpdateItemRequest updateItemRequest = UpdateItemRequest.builder().tableName("Empleados").key(keyToGet)
@@ -82,10 +82,10 @@ public class AWS_DDB_Empleados {
             try {
                 UpdateItemResponse updateItemResponse = dynamoDbClient.updateItem(updateItemRequest);
                 Map<String, AttributeValue> updatedItem = updateItemResponse.attributes();
-                LOGGER.info("Objeto actualizado exitosamente: " + updatedItem);
+             //   LOGGER.info("Objeto actualizado exitosamente: " + updatedItem);
 
             } catch (DynamoDbException e) {
-                LOGGER.error("Error al actualizar el objeto: " + e.getMessage());
+              //  LOGGER.error("Error al actualizar el objeto: " + e.getMessage());
             } finally {
                 dynamoDbClient.close();
             }
