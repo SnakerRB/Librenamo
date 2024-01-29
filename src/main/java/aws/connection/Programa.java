@@ -3,14 +3,15 @@ package aws.connection;
 public class Programa {
 	public static void main(String[] args) {
 
-		// Nombre de la tabla en DynamoDB
-		String tableName = "Libros";
-
-		// -------------------- IMPORTAR OBJETOS DESDE JSON -------------------- OK
-		// Ruta al archivo JSON en la carpeta resources
-		// String jsonFilePath = "src/main/resources/libros.json";
+		// -------------------- IMPORTAR OBJETOS DESDE JSON --------------------
+		//Ruta al archivo JSON en la carpeta resources
+		String jsonFileLibros = "src/main/resources/libros.json";
+		String jsonFileEmpleados = "";
+		String jsonFileventas = "";
 		
-		// AWS_DDB_Import.MegaImport(AWS_DDB_Login.Logg(), tableName, jsonFilePath);
+		AWS_DDB_Libros.ImportFromJson(AWS_DDB_Login.Logg(), jsonFileLibros);
+		AWS_DDB_Empleados.ImportFromJson();
+		AWS_DDB_Ventas.ImportFromJson();
 
 		// -------------------- SELECT DE TODA LA TABLA -------------------- OK
 		// Define los campos que deseas proyectar y mostrar

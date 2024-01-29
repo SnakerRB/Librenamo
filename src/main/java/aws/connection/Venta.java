@@ -13,7 +13,7 @@ public class Venta {
 	private AttributeValue Direccion;
 	private AttributeValue EmpeladoID;
 	private AttributeValue TotalVenta;
-	private Map<AttributeValue, AttributeValue> ListaLibrosVendidos;
+	private Map<String, AttributeValue> ListaLibrosVendidos;
 
 	// -------------------- CONSTRUCTOR --------------------
 	public Venta() {
@@ -45,7 +45,7 @@ public class Venta {
 		return TotalVenta;
 	}
 
-	public Map<AttributeValue, AttributeValue> getListaLibrosVendidos() {
+	public Map<String, AttributeValue> getListaLibrosVendidos() {
 		return ListaLibrosVendidos;
 	}
 
@@ -71,10 +71,12 @@ public class Venta {
 	}
 
 	public void setListaLibrosVendidos(String cantidad, String isbn) {
-		Map<AttributeValue, AttributeValue> lista = new HashMap<>();
-		lista.put(AttributeValue.builder().n(cantidad).build(), AttributeValue.builder().s(isbn).build());
+	    if (this.ListaLibrosVendidos == null) {
+	        ListaLibrosVendidos = new HashMap<>();
+	    }
 
-		ListaLibrosVendidos = lista;
+	    ListaLibrosVendidos.put("Cantidad", AttributeValue.builder().n(cantidad).build());
+	    ListaLibrosVendidos.put("ISBN", AttributeValue.builder().s(isbn).build());
 	}
 
 }
