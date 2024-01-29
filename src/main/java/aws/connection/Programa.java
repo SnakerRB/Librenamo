@@ -1,7 +1,6 @@
 package aws.connection;
 
 public class Programa {
-
 	public static void main(String[] args) {
 
 		// Nombre de la tabla en DynamoDB

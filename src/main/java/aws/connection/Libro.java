@@ -6,20 +6,21 @@ public class Libro {
 
 	// -------------------- ATRIBUTOS --------------------
 	private AttributeValue ISBN;
-	private AttributeValue Titulo;
+	private AttributeValue Anio;
 	private AttributeValue Autor;
-	private AttributeValue AnoPublicacion;
 	private AttributeValue Editorial;
+	private AttributeValue Existencias;
 	private AttributeValue Genero;
+	private AttributeValue Precio;
+	private AttributeValue Titulo;
 
 	// -------------------- CONSTRUCTOR --------------------
 	public Libro() {
 
 	}
 
-	public Libro(String iSBN, String titulo) {
+	public Libro(String iSBN) {
 		ISBN = AttributeValue.builder().s(iSBN).build();
-		Titulo = AttributeValue.builder().s(titulo).build();
 	}
 
 	// -------------------- GETTERS --------------------
@@ -27,24 +28,32 @@ public class Libro {
 		return ISBN;
 	}
 
-	public AttributeValue getTitulo() {
-		return Titulo;
+	public AttributeValue getAnio() {
+		return Anio;
 	}
 
 	public AttributeValue getAutor() {
 		return Autor;
 	}
 
-	public AttributeValue getAnoPublicacion() {
-		return AnoPublicacion;
-	}
-
 	public AttributeValue getEditorial() {
 		return Editorial;
 	}
 
+	public AttributeValue getExistencias() {
+		return Existencias;
+	}
+
 	public AttributeValue getGenero() {
 		return Genero;
+	}
+
+	public AttributeValue getPrecio() {
+		return Precio;
+	}
+
+	public AttributeValue getTitulo() {
+		return Titulo;
 	}
 
 	// -------------------- SETTERS --------------------
@@ -52,31 +61,40 @@ public class Libro {
 		this.ISBN = AttributeValue.builder().s(ISBN).build();
 	}
 
-	public void setTitulo(String titulo) {
-		Titulo = AttributeValue.builder().s(titulo).build();
+	public void setAnio(String anio) {
+		Anio = AttributeValue.builder().n(anio).build();
 	}
 
 	public void setAutor(String autor) {
 		Autor = AttributeValue.builder().s(autor).build();
 	}
 
-	public void setAnoPublicacion(String anoPublicacion) {
-		AnoPublicacion = AttributeValue.builder().s(anoPublicacion).build();
-	}
-
 	public void setEditorial(String editorial) {
 		Editorial = AttributeValue.builder().s(editorial).build();
+	}
+
+	public void setExistencias(String existencias) {
+		Existencias = AttributeValue.builder().n(existencias).build();
 	}
 
 	public void setGenero(String genero) {
 		Genero = AttributeValue.builder().s(genero).build();
 	}
 
+	public void setPrecio(String precio) {
+		Precio = AttributeValue.builder().n(precio).build();
+	}
+
+	public void setTitulo(String titulo) {
+		Titulo = AttributeValue.builder().s(titulo).build();
+	}
+
 	// -------------------- TO-STRING --------------------
 	@Override
 	public String toString() {
-		return "Libro [ISBN=" + ISBN + ", Titulo=" + Titulo + ", Autor=" + Autor + ", AnoPublicacion=" + AnoPublicacion
-				+ ", Editorial=" + Editorial + ", Genero=" + Genero + "]";
+		return "Libro [ISBN=" + ISBN + ", Anio=" + Anio + ", Autor=" + Autor + ", Editorial=" + Editorial
+				+ ", Existencias=" + Existencias + ", Genero=" + Genero + ", Precio=" + Precio + ", Titulo=" + Titulo
+				+ "]";
 	}
 
 }
