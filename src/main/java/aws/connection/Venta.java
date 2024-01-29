@@ -11,7 +11,7 @@ public class Venta {
 	private AttributeValue VentaID;
 	private AttributeValue FechaVenta;
 	private AttributeValue Direccion;
-	private AttributeValue EmpeladoID;
+	private AttributeValue EmpleadoID;
 	private AttributeValue TotalVenta;
 	private Map<String, AttributeValue> ListaLibrosVendidos;
 
@@ -20,8 +20,9 @@ public class Venta {
 
 	}
 
-	public Venta(AttributeValue ventaID) {
+	public Venta(AttributeValue ventaID,AttributeValue fechaVenta ) {
 		VentaID = ventaID;
+		FechaVenta=fechaVenta ;
 	}
 
 	// -------------------- GETTERS --------------------
@@ -37,8 +38,8 @@ public class Venta {
 		return Direccion;
 	}
 
-	public AttributeValue getEmpeladoID() {
-		return EmpeladoID;
+	public AttributeValue getEmpleadoID() {
+		return EmpleadoID;
 	}
 
 	public AttributeValue getTotalVenta() {
@@ -62,8 +63,8 @@ public class Venta {
 		Direccion = AttributeValue.builder().s(direccion).build();
 	}
 
-	public void setEmpeladoID(String empeladoID) {
-		EmpeladoID = AttributeValue.builder().s(empeladoID).build();
+	public void setEmpleadoID(String empleadoID) {
+		EmpleadoID = AttributeValue.builder().s(empleadoID).build();
 	}
 
 	public void setTotalVenta(String totalVenta) {

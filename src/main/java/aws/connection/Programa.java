@@ -2,6 +2,19 @@ package aws.connection;
 
 public class Programa {
 	public static void main(String[] args) {
+		/*
+		 * PARA CONECTARNOS AL LA BBDD DE DYNAMO DB 
+		 * 
+		 * -INSERTAR ACCES KEY GENERADA EN LA SESIÓN
+		 * -INSERTAR SECRET KEY GENERADA EN LA SESIÓN
+		 * -INSERTAR SESSION TOKEN GENERADA EN LA SESIÓN
+		 * 
+		
+		System.out.println("--INICIO DE SESION EN DynamoDB NECESARIO--");
+		String accessKey="ASIAY7LABMP7F3I6IXFY";
+		String secretKey="sYO5eRTxnSzg+I1midVAJMw0D8WWfPx1My1Z2hip";
+		String sessionToken="FwoGZXIvYXdzEEsaDL3HhE17PHIDlL0NHiLCAcV8j8UW5nzHg+gXOBRYzEo36PuMmfKykZ0rLi7yGdW3bqTznDX6wDjWgTRmdMGJAGGxOk5fkADr8gzO5OlGEa3kgaHNRQA9eIJqe2TZ+1YcBZhKv0MuxAAfyXRVEmuqTaNJyGHYvIY+zov00JAPyQtQzynIXsk6jQ8qcDe0X4TN/sDFLTcZgnVyxNuGmYzJVdZxQFIxms+CEgzrDjqeQ0IaPkfg9b5Gxbc+lmjChl7pEZkuu2QHeKDz8C6WZ4a55SGtKNa8360GMi2seGnw7oiHJkLYIIGikORJ0ConOjTDuUSGK2NJ/LtCXVAsKabVPr93naBfafU= ";
+		 */	
 
 		// -------------------- IMPORTAR OBJETOS DESDE JSON --------------------
 		//Ruta al archivo JSON en la carpeta resources
@@ -20,6 +33,7 @@ public class Programa {
 		// AWS_DDB_Select.SelectAll(AWS_DDB_Login.Logg(), tableName, campos);
 
 
+		//______________________________________TEST_LIBROS_________________________________ OK
 		
 		// -------------------- INSERTAR 1 LIBRO -------------------- OK
 		// Crea un objeto Libro con los detalles del libro que deseas insertar
@@ -35,9 +49,6 @@ public class Programa {
 
 		// Llama al método para insertar el libro en la tabla
 		//AWS_DDB_Libros.Create(AWS_DDB_Login.Logg(), libro);
-		
-		
-		//______________________________________TEST_LIBROS_________________________________ OK
 
 		// -------------------- ELIMINAR 1 LIBRO ------------------ OK
 		//String isbnToDelete = "ISBN-00100";
@@ -46,13 +57,13 @@ public class Programa {
 		
 		// -------------------- EDITAR 1 LIBRO -------------------- Falta return con los nuevos datos
 		
-		/*		
+				
 		String isbnToUpdate = "ISBN-00100";
-		String atribToUpdate = "Autor";
-		String valueToUpdate = "Autor POPO";
+		String atribToUpdate = "Titulo";
+		String valueToUpdate = "TONTO";
 		
-		AWS_DDB_Libros.Edit(AWS_DDB_Login.Logg(), isbnToUpdate, atribToUpdate, valueToUpdate);
-		*/
+		//AWS_DDB_Libros.Edit(AWS_DDB_Login.LoggMain(accessKey, secretKey, sessionToken), isbnToUpdate, atribToUpdate, valueToUpdate);
+		//AWS_DDB_Libros.Edit(AWS_DDB_Login.Logg(), isbnToUpdate, atribToUpdate, valueToUpdate);
 	
 		
 		
@@ -88,6 +99,20 @@ public class Programa {
 		//AWS_DDB_Empleados.Delete(AWS_DDB_Login.Logg(),IdEMpleadoDelete);
 		
 			
+		
+		
+		//_____________________________ VENTAS ______________________________ 
+		Venta vent = new Venta();
+		vent.setVentaID("VEN_0001");
+		vent.setFechaVenta("11/09/2011");
+		vent.setDireccion("Calle de tus muertos");
+		vent.setEmpleadoID("EMP_0001");
+		vent.setListaLibrosVendidos("3", "ISBN-00000");
+		vent.setTotalVenta("150");
+		//AWS_DDB_Ventas.Create(AWS_DDB_Login.Logg(), vent);
+	
+		AWS_DDB_Ventas.Edit(AWS_DDB_Login.Logg(),"VEN_0001","Direccion","AHORA SON MIS MUERTOS","11/09/2011");
+		
 		
 		
 		// -------------------- BUSCAR 1 OBJETO -------------------- OK
