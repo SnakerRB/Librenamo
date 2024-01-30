@@ -10,6 +10,7 @@ public class AWS_DDB_Properties {
 
 	public AWS_DDB_Properties() {
 		properties = new Properties();
+		
 		try {
 			// Carga el archivo de propiedades desde la carpeta resources
 			InputStream inputStream = getClass().getClassLoader().getResourceAsStream("DynamoDB.properties");

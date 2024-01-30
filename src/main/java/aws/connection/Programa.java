@@ -102,6 +102,7 @@ public class Programa {
 		
 		
 		//_____________________________ VENTAS ______________________________ 
+		/*
 		Venta vent = new Venta();
 		vent.setVentaID("VEN_0001");
 		vent.setFechaVenta("11/09/2011");
@@ -109,17 +110,17 @@ public class Programa {
 		vent.setEmpleadoID("EMP_0001");
 		vent.setListaLibrosVendidos("3", "ISBN-00000");
 		vent.setTotalVenta("150");
-		//AWS_DDB_Ventas.Create(AWS_DDB_Login.Logg(), vent);
+		AWS_DDB_Ventas.Create(AWS_DDB_Login.Logg(), vent);
 	
 		AWS_DDB_Ventas.Edit(AWS_DDB_Login.Logg(),"VEN_0001","Direccion","AHORA SON MIS MUERTOS","11/09/2011");
+		*/
 		
 		
+		// -------------------- LISTAR TABLA -------------------- OK
+		String tabla = "Libros";
 		
-		// -------------------- BUSCAR 1 OBJETO -------------------- OK
-		// String isbnToSearch = "ISBN-00000";
-		// String titleToSearch = "Libro 0";
 		
-		// AWS_DDB_Select.SelectLibro(AWS_DDB_Login.Logg(), tableName, isbnToSearch, titleToSearch);
+		AWS_DDB_Select.SelectAll(AWS_DDB_Login.Logg(), tabla);
 		
 	}
 
