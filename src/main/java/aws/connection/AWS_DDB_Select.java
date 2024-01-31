@@ -1,5 +1,6 @@
 package aws.connection;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -83,21 +84,36 @@ public class AWS_DDB_Select {
 	}
 
 	// -------------------- SELECT * FROM table WHERE pk --------------------
-	public static void buscarItem(DynamoDbClient dynamoDbClient, String tableName, String partitionKey) {
+	public static void buscarItem(DynamoDbClient dynamoDbClient, String tableName, String partitionKey, String sortKey) {
+		String partitionKeyName;
+		String SortKeyName = null;
+		Map<String, AttributeValue> keyMap = new HashMap<>();
 
-		String PartitionKeyName = "";
 		switch (tableName) {
-			case "Libros": PartitionKeyName = "ISBN";
+		case "Libros":
+			partitionKeyName = "ISBN";
 			break;
-			case "Empleados": PartitionKeyName = "EmpleadoID";
+		case "Empleados":
+			partitionKeyName = "EmpleadoID";
 			break;
-			case "Ventas": PartitionKeyName = "VentaID";
+		case "Ventas":
+			partitionKeyName = "VentaID";
+			SortKeyName = "FechaVenta";
 			break;
+		default:
+			partitionKeyName = "";
+			SortKeyName = null;
+		}
+
+		keyMap.put(partitionKeyName, AttributeValue.builder().s(partitionKey).build());
+
+		// Si se proporciona una sortKey, agrégala al mapa de claves
+		if (sortKey != null && !sortKey.isEmpty()) {
+			keyMap.put(SortKeyName, AttributeValue.builder().s(sortKey).build());
 		}
 
 		try {
-			GetItemRequest getItemRequest = GetItemRequest.builder().tableName(tableName)
-					.key(Map.of(PartitionKeyName, AttributeValue.builder().s(partitionKey).build())).build();
+			GetItemRequest getItemRequest = GetItemRequest.builder().tableName(tableName).key(keyMap).build();
 
 			GetItemResponse getItemResponse = dynamoDbClient.getItem(getItemRequest);
 
@@ -105,7 +121,17 @@ public class AWS_DDB_Select {
 
 			if (item != null) {
 				for (Map.Entry<String, AttributeValue> entry : item.entrySet()) {
-					System.out.println(entry.getKey() + ": " + entry.getValue().s());
+					String key = entry.getKey();
+					AttributeValue value = entry.getValue();
+
+					if (value.s() != null) {
+						System.out.println(key + ": " + value.s());
+					} else if (value.n() != null) {
+						System.out.println(key + ": " + value.n());
+					} else {
+						// Manejar otros tipos de datos si es necesario
+						System.out.println(key + ": " + "Tipo de dato no compatible");
+					}
 				}
 			} else {
 				LOGGER.warn("No se encontró ningún item con la Partition Key proporcionada.");

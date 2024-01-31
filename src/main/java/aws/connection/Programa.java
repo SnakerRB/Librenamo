@@ -117,13 +117,16 @@ public class Programa {
 		
 		
 		//_____________________________ LISTAR TODOS LOS ITEMS DE UNA TABLA ______________________________ 
+		/*
 		String tabla = "Empleados";
 		
-		//AWS_DDB_Select.SelectAll(AWS_DDB_Login.Logg(), tabla);
+		AWS_DDB_Select.SelectAll(AWS_DDB_Login.Logg(), tabla);
+		*/
 		
 		//_____________________________ LISTAR UN ITEM ESPECIFICOO ______________________________ 
+		String tabla = "Ventas";
 		
-		AWS_DDB_Select.buscarItem(AWS_DDB_Login.Logg(), tabla, "EMP_0001");
+		AWS_DDB_Select.buscarItem(AWS_DDB_Login.Logg(), tabla, "VEN_0001", "11/09/2011");
 		
 	}
 
