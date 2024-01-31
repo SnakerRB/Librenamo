@@ -1,15 +1,5 @@
 [
   {
-    "ISBN": "ISBN-00000",
-    "Anio": 1960,
-    "Autor": "Autor C",
-    "Editorial": "Editorial 4",
-    "Existencias": 47,
-    "Genero": "Hist\u00f3rico",
-    "Precio": 63.17,
-    "Titulo": "Libro 0"
-  },
-  {
     "ISBN": "ISBN-00001",
     "Anio": 2006,
     "Autor": "Autor D",

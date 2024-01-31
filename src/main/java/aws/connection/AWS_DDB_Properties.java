@@ -20,7 +20,7 @@ public class AWS_DDB_Properties {
 			
 			if (inputStream != null) {
 				properties.load(inputStream);
-				LOGGER.info("Fichero Properties Cargado correctamente");
+				LOGGER.trace("Fichero Properties Cargado correctamente");
 			} else {
 				LOGGER.error("No se pudo encontrar el archivo de propiedades.");	
 				

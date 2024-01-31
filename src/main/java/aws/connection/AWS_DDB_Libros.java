@@ -34,7 +34,7 @@ public class AWS_DDB_Libros {
 					"Genero", libro.getGenero(), "Precio", libro.getPrecio(), "Titulo", libro.getTitulo());
 			
 			PutItemRequest putItemRequest = PutItemRequest.builder().tableName("Libros").item(item).build();
-			LOGGER.info("Map y ItemRequest realizado correctamente");
+			LOGGER.trace("Map y ItemRequest realizado correctamente");
 			// Inserta el libro en la tabla DynamoDB
 			dynamoDbClient.putItem(putItemRequest);
 			LOGGER.info("Libro insertado: " + libro.getISBN().s());
@@ -43,7 +43,7 @@ public class AWS_DDB_Libros {
 			LOGGER.error("Error al insertar el libro: " + e.getMessage());
 		} finally {
 			dynamoDbClient.close();
-			LOGGER.info("Cliente DB Cerrado correctamente");
+			LOGGER.trace("Cliente DB Cerrado correctamente");
 		}
 	}
 
@@ -99,48 +99,4 @@ public class AWS_DDB_Libros {
 			}
 		}
 	}
-	
-	public static ArrayList<Libro> ImportFromJson(DynamoDbClient dynamoDbClient, String jsonFilePath) {
-		ObjectMapper objectMapper = new ObjectMapper();
-		ArrayList<Libro> libros = new ArrayList<>();
-        try {
-            // Lee el JSON desde el archivo
-            JsonNode jsonArray = objectMapper.readTree(new File(jsonFilePath));
-
-            // Verifica si el JSON es un arreglo
-            if (jsonArray.isArray()) {
-                for (JsonNode jsonNode : jsonArray) {
-                    // Verifica si el JSON contiene todas las propiedades necesarias
-                    if (jsonNode.has("ISBN") && jsonNode.has("Titulo") && jsonNode.has("Anio")
-                            && jsonNode.has("Autor") && jsonNode.has("Editorial")
-                            && jsonNode.has("Existencias") && jsonNode.has("Genero")
-                            && jsonNode.has("Precio")) {
-
-                        // Crea un nuevo objeto Libro y asigna los valores
-                        Libro libro = new Libro();
-                        libro.setISBN(jsonNode.get("ISBN").asText());
-                        libro.setTitulo(jsonNode.get("Titulo").asText());
-                        libro.setAnio(jsonNode.get("Anio").asText());
-                        libro.setAutor(jsonNode.get("Autor").asText());
-                        libro.setEditorial(jsonNode.get("Editorial").asText());
-                        libro.setExistencias(jsonNode.get("Existencias").asText());
-                        libro.setGenero(jsonNode.get("Genero").asText());
-                        libro.setPrecio(jsonNode.get("Precio").asText());
-
-                        libros.add(libro);
-                        LOGGER.info("Libro añadido correctamente");
-                    } else {
-                        System.err.println("Error: Uno o más objetos en el JSON no contienen todas las propiedades necesarias.");
-                    }
-                }
-            } else {
-                System.err.println("Error: El JSON no es un arreglo.");
-            }
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return libros;
-    }
 }

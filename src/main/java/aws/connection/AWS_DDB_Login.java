@@ -23,7 +23,7 @@ public class AWS_DDB_Login {
 		
 		// Crea las credenciales incluyendo el token de sesión
 		AwsSessionCredentials credentials = AwsSessionCredentials.create(accessKey, secretKey, sessionToken);
-		LOGGER.info("Credenciales cargadas correctamente");
+		LOGGER.trace("Credenciales cargadas correctamente");
 		// Imprime las credenciales personalizadas
 		LOGGER.trace("Access Key: " + credentials.accessKeyId());
 		LOGGER.trace("Secret Key: " + credentials.secretAccessKey());

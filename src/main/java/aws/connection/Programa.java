@@ -1,18 +1,43 @@
 package aws.connection;
 
+import java.util.ArrayList;
+
 public class Programa {
 	public static void main(String[] args) {
 
 
 		// -------------------- IMPORTAR OBJETOS DESDE JSON --------------------
 		//Ruta al archivo JSON en la carpeta resources
-		//String jsonFileLibros = "src/main/resources/libros.json";
+		String jsonFileLibros = "src/main/resources/libros.json";
 		//String jsonFileEmpleados = "";
 		//String jsonFileventas = "";
 		
 		//AWS_DDB_Libros.ImportFromJson(AWS_DDB_Login.Logg(), jsonFileLibros);
 		//AWS_DDB_Empleados.ImportFromJson();
 		//AWS_DDB_Ventas.ImportFromJson();
+		
+		
+		
+		//JsonHandler.ImportLibros(jsonFileLibros);
+		
+		
+		//AWS_DDB_Empleados.ImportFromJson();
+		//AWS_DDB_Ventas.ImportFromJson();
+		
+		//JsonHandler.ImportLibros(jsonFileLibros);
+		JsonHandler.ImportarLibros(jsonFileLibros);
+		
+		
+		
+		//AWS_DDB_Empleados.ImportFromJson();
+		//AWS_DDB_Ventas.ImportFromJson();
+
+
+		
+		
+		//AWS_DDB_Empleados.ImportFromJson();
+		//AWS_DDB_Ventas.ImportFromJson();
+
 
 		// -------------------- SELECT DE TODA LA TABLA -------------------- OK
 		// Define los campos que deseas proyectar y mostrar
