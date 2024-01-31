@@ -116,12 +116,14 @@ public class Programa {
 		*/
 		
 		
-		// -------------------- LISTAR TABLA -------------------- OK
-		String tabla = "Libros";
-		
+		//_____________________________ LISTAR TODOS LOS ITEMS DE UNA TABLA ______________________________ 
+		String tabla = "Empleados";
 		
 		//AWS_DDB_Select.SelectAll(AWS_DDB_Login.Logg(), tabla);
-		AWS_DDB_Select.buscarItem(AWS_DDB_Login.Logg(), tabla, "ISBN-00100");
+		
+		//_____________________________ LISTAR UN ITEM ESPECIFICOO ______________________________ 
+		
+		AWS_DDB_Select.buscarItem(AWS_DDB_Login.Logg(), tabla, "EMP_0001");
 		
 	}
 

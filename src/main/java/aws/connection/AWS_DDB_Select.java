@@ -87,10 +87,12 @@ public class AWS_DDB_Select {
 
 		String PartitionKeyName = "";
 		switch (tableName) {
-
 			case "Libros": PartitionKeyName = "ISBN";
-			case "Empleados": PartitionKeyName = "";
-			case "Ventas": PartitionKeyName = "";
+			break;
+			case "Empleados": PartitionKeyName = "EmpleadoID";
+			break;
+			case "Ventas": PartitionKeyName = "VentaID";
+			break;
 		}
 
 		try {
