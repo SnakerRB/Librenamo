@@ -1,42 +1,41 @@
 package aws.connection;
 
-import java.util.ArrayList;
+
 
 public class Programa {
 	public static void main(String[] args) {
 
-
-		// -------------------- IMPORTAR OBJETOS DESDE JSON --------------------
-		//Ruta al archivo JSON en la carpeta resources
+		
+		//________________________IMPORTAR DATOS DE JSON_________________________ OK (FALTA VENTAS)
+		
+		
 		String jsonFileLibros = "src/main/resources/libros.json";
-		//String jsonFileEmpleados = "";
+		String jsonFileEmpleados = "src/main/resources/empleados.json";
+		
+		
+		String OutFilePathEmpleados="src/main/resources/empleadosOut.json";
+		String OutFilePathLibros="src/main/resources/librosOut.json";
 		//String jsonFileventas = "";
 		
-		//AWS_DDB_Libros.ImportFromJson(AWS_DDB_Login.Logg(), jsonFileLibros);
-		//AWS_DDB_Empleados.ImportFromJson();
-		//AWS_DDB_Ventas.ImportFromJson();
+		//Insertar secuencia de libros desde json
+			//JsonHandler.ImportarLibros(jsonFileLibros);
+		
+		// insertar secuencia de empleados desde json
+			//JsonHandler.ImportarEmpleados(jsonFileEmpleados);
 		
 		
 		
-		//JsonHandler.ImportLibros(jsonFileLibros);
 		
 		
-		//AWS_DDB_Empleados.ImportFromJson();
-		//AWS_DDB_Ventas.ImportFromJson();
+		//________________________EXPORTAR DATOS A JSON___________________________
 		
-		//JsonHandler.ImportLibros(jsonFileLibros);
-		JsonHandler.ImportarLibros(jsonFileLibros);
+		//Exportar empleados a un fichero json
 		
+		//JsonHandler.EmpleadosJson(AWS_DDB_Empleados.getAllEmpleados(AWS_DDB_Login.Logg()), OutFilePathEmpleados);
 		
+		JsonHandler.ExportarEmpleados(OutFilePathEmpleados);
+		JsonHandler.ExportarLibros(OutFilePathLibros);
 		
-		//AWS_DDB_Empleados.ImportFromJson();
-		//AWS_DDB_Ventas.ImportFromJson();
-
-
-		
-		
-		//AWS_DDB_Empleados.ImportFromJson();
-		//AWS_DDB_Ventas.ImportFromJson();
 
 
 		// -------------------- SELECT DE TODA LA TABLA -------------------- OK
@@ -61,8 +60,7 @@ public class Programa {
 //		libro.setExistencias("20");
 
 		// Llama al método para insertar el libro en la tabla
-		//AWS_DDB_Libros.Create(AWS_DDB_Login.Logg(), libro);
-
+		//AWS_DDB_Libros.Create(AWS_DDB_Login.Logg(), libro);	
 		// -------------------- ELIMINAR 1 LIBRO ------------------ OK
 		//String isbnToDelete = "ISBN-00100";
 		
@@ -114,7 +112,10 @@ public class Programa {
 			
 		
 		
-		//_____________________________ VENTAS ______________________________ 
+		
+		
+		
+		//_________________________________________ VENTAS _________________________________________
 		/*
 		Venta vent = new Venta();
 		vent.setVentaID("VEN_0001");
@@ -129,6 +130,11 @@ public class Programa {
 		*/
 		
 		
+		
+		
+		
+		
+		
 		//_____________________________ LISTAR TODOS LOS ITEMS DE UNA TABLA ______________________________ 
 		/*
 		String tabla = "Empleados";
@@ -139,7 +145,7 @@ public class Programa {
 		//_____________________________ LISTAR UN ITEM ESPECIFICOO ______________________________ 
 		String tabla = "Ventas";
 		
-		AWS_DDB_Select.buscarItem(AWS_DDB_Login.Logg(), tabla, "VEN_0000", "26/01/2024");
+		//AWS_DDB_Select.buscarItem(AWS_DDB_Login.Logg(), tabla, "VEN_0000", "26/01/2024");
 		
 	}
 

@@ -3,6 +3,7 @@ package aws.connection;
 import java.io.IOException;
 import java.io.File;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.ArrayList;
 
@@ -19,6 +20,8 @@ import software.amazon.awssdk.services.dynamodb.model.DynamoDbException;
 import software.amazon.awssdk.services.dynamodb.model.GetItemRequest;
 import software.amazon.awssdk.services.dynamodb.model.PutItemRequest;
 import software.amazon.awssdk.services.dynamodb.model.ReturnValue;
+import software.amazon.awssdk.services.dynamodb.model.ScanRequest;
+import software.amazon.awssdk.services.dynamodb.model.ScanResponse;
 import software.amazon.awssdk.services.dynamodb.model.UpdateItemRequest;
 import software.amazon.awssdk.services.dynamodb.model.UpdateItemResponse;
 
@@ -99,4 +102,67 @@ public class AWS_DDB_Libros {
 			}
 		}
 	}
+	 public static ArrayList<Libro> getAllLibros(DynamoDbClient dynamoDbClient) {
+	        ArrayList<Libro> libros = new ArrayList<>();
+
+	        ScanResponse response;
+	        Map<String, AttributeValue> lastEvaluatedKey = null;
+	        int count=0;
+	        do {
+	            ScanRequest scanRequest = ScanRequest.builder()
+	                    .tableName("Libros")
+	                    .exclusiveStartKey(lastEvaluatedKey)
+	                    .build();
+
+	            response = dynamoDbClient.scan(scanRequest);
+
+	            List<Map<String, AttributeValue>> items = response.items();
+	            for (Map<String, AttributeValue> item : items) {
+	                Libro libro = new Libro();
+	                count++;
+	                if (item.containsKey("ISBN")) {
+	                    libro.setISBN(item.get("ISBN").s());
+	                }
+
+	                if (item.containsKey("Anio")) {
+	                    libro.setAnio(item.get("Anio").n());
+	                }
+
+	                if (item.containsKey("Autor")) {
+	                    libro.setAutor(item.get("Autor").s());
+	                }
+
+	                if (item.containsKey("Editorial")) {
+	                    libro.setEditorial(item.get("Editorial").s());
+	                }
+
+	                if (item.containsKey("Existencias")) {
+	                    libro.setExistencias(item.get("Existencias").n());
+	                }
+
+	                if (item.containsKey("Genero")) {
+	                    libro.setGenero(item.get("Genero").s());
+	                }
+
+	                if (item.containsKey("Precio")) {
+	                    libro.setPrecio(item.get("Precio").n());
+	                }
+
+	                if (item.containsKey("Titulo")) {
+	                    libro.setTitulo(item.get("Titulo").s());
+	                }
+
+	                libros.add(libro);
+	            }
+
+	            lastEvaluatedKey = response.lastEvaluatedKey();
+
+	        } while (lastEvaluatedKey != null && !lastEvaluatedKey.isEmpty());
+	        LOGGER.info("Se han recuperado "+count+" registros de Libros en la BBDD");
+	        return libros;
+	    }
+	
+	
+	
+	
 }
