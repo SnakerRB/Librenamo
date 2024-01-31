@@ -97,60 +97,59 @@ public class AWS_DDB_Empleados {
 			}
 		}
 	}
-	// metodo para recuperar los datos de los empleados de la bbdd y insertarlos en un array de objetos empleado 
-		public static ArrayList<Empleado> getAllEmpleados(DynamoDbClient dynamoDbClient) {
-	        ArrayList<Empleado> empleados = new ArrayList<>();
 
-	        ScanResponse response;
-	        Map<String, AttributeValue> lastEvaluatedKey = null;
-	        int count=0;
-	        do {
-	            ScanRequest scanRequest = ScanRequest.builder()
-	                    .tableName("Empleados")
-	                    .exclusiveStartKey(lastEvaluatedKey)
-	                    .build();
+	// metodo para recuperar los datos de los empleados de la bbdd y insertarlos en
+	// un array de objetos empleado
+	public static ArrayList<Empleado> getAllEmpleados(DynamoDbClient dynamoDbClient) {
+		ArrayList<Empleado> empleados = new ArrayList<>();
 
-	            response = dynamoDbClient.scan(scanRequest);
-	            
-	            List<Map<String, AttributeValue>> items = response.items();
-	            for (Map<String, AttributeValue> item : items) {
-	                Empleado empleado = new Empleado();
-	               
-	                if (item.containsKey("EmpleadoID")) {
-	                    empleado.setEmpleadoID(item.get("EmpleadoID").s());
-	                }
+		ScanResponse response;
+		Map<String, AttributeValue> lastEvaluatedKey = null;
+		int count = 0;
+		do {
+			ScanRequest scanRequest = ScanRequest.builder().tableName("Empleados").exclusiveStartKey(lastEvaluatedKey)
+					.build();
 
-	                if (item.containsKey("Apellido")) {
-	                    empleado.setApellido(item.get("Apellido").s());
-	                }
+			response = dynamoDbClient.scan(scanRequest);
 
-	                if (item.containsKey("Cargo")) {
-	                    empleado.setCargo(item.get("Cargo").s());
-	                }
+			List<Map<String, AttributeValue>> items = response.items();
+			for (Map<String, AttributeValue> item : items) {
+				Empleado empleado = new Empleado();
 
-	                if (item.containsKey("Direccion")) {
-	                    empleado.setDireccion(item.get("Direccion").s());
-	                }
+				if (item.containsKey("EmpleadoID")) {
+					empleado.setEmpleadoID(item.get("EmpleadoID").s());
+				}
 
-	                if (item.containsKey("FechaContrato")) {
-	                    empleado.setFechaContrato(item.get("FechaContrato").s());
-	                }
+				if (item.containsKey("Apellido")) {
+					empleado.setApellido(item.get("Apellido").s());
+				}
 
-	                if (item.containsKey("Nombre")) {
-	                    empleado.setNombre(item.get("Nombre").s());
-	                }
+				if (item.containsKey("Cargo")) {
+					empleado.setCargo(item.get("Cargo").s());
+				}
 
-	                empleados.add(empleado);
-	                count++;
-	            }
+				if (item.containsKey("Direccion")) {
+					empleado.setDireccion(item.get("Direccion").s());
+				}
 
-	            lastEvaluatedKey = response.lastEvaluatedKey();
+				if (item.containsKey("FechaContrato")) {
+					empleado.setFechaContrato(item.get("FechaContrato").s());
+				}
 
-	        } while (lastEvaluatedKey != null && !lastEvaluatedKey.isEmpty());
-	        
-	        LOGGER.info("Se han recuperado "+count+" registros de Empleados en la BBDD");
-	        return empleados;
-	        
-	    }	
+				if (item.containsKey("Nombre")) {
+					empleado.setNombre(item.get("Nombre").s());
+				}
+
+				empleados.add(empleado);
+				count++;
+			}
+
+			lastEvaluatedKey = response.lastEvaluatedKey();
+
+		} while (lastEvaluatedKey != null && !lastEvaluatedKey.isEmpty());
+
+		LOGGER.info("Se han recuperado " + count + " registros de Empleados en la BBDD");
+		return empleados;
+
+	}
 }
-

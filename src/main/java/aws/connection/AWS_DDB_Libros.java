@@ -35,7 +35,7 @@ public class AWS_DDB_Libros {
 			Map<String, AttributeValue> item = Map.of("ISBN", libro.getISBN(), "Anio", libro.getAnio(), "Autor",
 					libro.getAutor(), "Editorial", libro.getEditorial(), "Existencias", libro.getExistencias(),
 					"Genero", libro.getGenero(), "Precio", libro.getPrecio(), "Titulo", libro.getTitulo());
-			
+
 			PutItemRequest putItemRequest = PutItemRequest.builder().tableName("Libros").item(item).build();
 			LOGGER.trace("Map y ItemRequest realizado correctamente");
 			// Inserta el libro en la tabla DynamoDB
@@ -102,67 +102,63 @@ public class AWS_DDB_Libros {
 			}
 		}
 	}
-	 public static ArrayList<Libro> getAllLibros(DynamoDbClient dynamoDbClient) {
-	        ArrayList<Libro> libros = new ArrayList<>();
 
-	        ScanResponse response;
-	        Map<String, AttributeValue> lastEvaluatedKey = null;
-	        int count=0;
-	        do {
-	            ScanRequest scanRequest = ScanRequest.builder()
-	                    .tableName("Libros")
-	                    .exclusiveStartKey(lastEvaluatedKey)
-	                    .build();
+	public static ArrayList<Libro> getAllLibros(DynamoDbClient dynamoDbClient) {
+		ArrayList<Libro> libros = new ArrayList<>();
 
-	            response = dynamoDbClient.scan(scanRequest);
+		ScanResponse response;
+		Map<String, AttributeValue> lastEvaluatedKey = null;
+		int count = 0;
+		do {
+			ScanRequest scanRequest = ScanRequest.builder().tableName("Libros").exclusiveStartKey(lastEvaluatedKey)
+					.build();
 
-	            List<Map<String, AttributeValue>> items = response.items();
-	            for (Map<String, AttributeValue> item : items) {
-	                Libro libro = new Libro();
-	                count++;
-	                if (item.containsKey("ISBN")) {
-	                    libro.setISBN(item.get("ISBN").s());
-	                }
+			response = dynamoDbClient.scan(scanRequest);
 
-	                if (item.containsKey("Anio")) {
-	                    libro.setAnio(item.get("Anio").n());
-	                }
+			List<Map<String, AttributeValue>> items = response.items();
+			for (Map<String, AttributeValue> item : items) {
+				Libro libro = new Libro();
+				count++;
+				if (item.containsKey("ISBN")) {
+					libro.setISBN(item.get("ISBN").s());
+				}
 
-	                if (item.containsKey("Autor")) {
-	                    libro.setAutor(item.get("Autor").s());
-	                }
+				if (item.containsKey("Anio")) {
+					libro.setAnio(item.get("Anio").n());
+				}
 
-	                if (item.containsKey("Editorial")) {
-	                    libro.setEditorial(item.get("Editorial").s());
-	                }
+				if (item.containsKey("Autor")) {
+					libro.setAutor(item.get("Autor").s());
+				}
 
-	                if (item.containsKey("Existencias")) {
-	                    libro.setExistencias(item.get("Existencias").n());
-	                }
+				if (item.containsKey("Editorial")) {
+					libro.setEditorial(item.get("Editorial").s());
+				}
 
-	                if (item.containsKey("Genero")) {
-	                    libro.setGenero(item.get("Genero").s());
-	                }
+				if (item.containsKey("Existencias")) {
+					libro.setExistencias(item.get("Existencias").n());
+				}
 
-	                if (item.containsKey("Precio")) {
-	                    libro.setPrecio(item.get("Precio").n());
-	                }
+				if (item.containsKey("Genero")) {
+					libro.setGenero(item.get("Genero").s());
+				}
 
-	                if (item.containsKey("Titulo")) {
-	                    libro.setTitulo(item.get("Titulo").s());
-	                }
+				if (item.containsKey("Precio")) {
+					libro.setPrecio(item.get("Precio").n());
+				}
 
-	                libros.add(libro);
-	            }
+				if (item.containsKey("Titulo")) {
+					libro.setTitulo(item.get("Titulo").s());
+				}
 
-	            lastEvaluatedKey = response.lastEvaluatedKey();
+				libros.add(libro);
+			}
 
-	        } while (lastEvaluatedKey != null && !lastEvaluatedKey.isEmpty());
-	        LOGGER.info("Se han recuperado "+count+" registros de Libros en la BBDD");
-	        return libros;
-	    }
-	
-	
-	
-	
+			lastEvaluatedKey = response.lastEvaluatedKey();
+
+		} while (lastEvaluatedKey != null && !lastEvaluatedKey.isEmpty());
+		LOGGER.info("Se han recuperado " + count + " registros de Libros en la BBDD");
+		return libros;
+	}
+
 }

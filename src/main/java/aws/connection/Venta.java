@@ -20,9 +20,9 @@ public class Venta {
 
 	}
 
-	public Venta(AttributeValue ventaID,AttributeValue fechaVenta ) {
+	public Venta(AttributeValue ventaID, AttributeValue fechaVenta) {
 		VentaID = ventaID;
-		FechaVenta=fechaVenta ;
+		FechaVenta = fechaVenta;
 	}
 
 	// -------------------- GETTERS --------------------
@@ -72,12 +72,12 @@ public class Venta {
 	}
 
 	public void setListaLibrosVendidos(String cantidad, String isbn) {
-	    if (this.ListaLibrosVendidos == null) {
-	        ListaLibrosVendidos = new HashMap<>();
-	    }
+		if (this.ListaLibrosVendidos == null) {
+			ListaLibrosVendidos = new HashMap<>();
+		}
 
-	    ListaLibrosVendidos.put("Cantidad", AttributeValue.builder().n(cantidad).build());
-	    ListaLibrosVendidos.put("ISBN", AttributeValue.builder().s(isbn).build());
+		ListaLibrosVendidos.put("Cantidad", AttributeValue.builder().n(cantidad).build());
+		ListaLibrosVendidos.put("ISBN", AttributeValue.builder().s(isbn).build());
 	}
 
 }
