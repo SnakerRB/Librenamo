@@ -98,7 +98,7 @@ public class AWS_DDB_Libros {
 		}
 	}
 	
-	public static ArrayList<Libro> ImportFromJson(String jsonFilePath) {
+	public static ArrayList<Libro> ImportFromJson(DynamoDbClient dynamoDbClient, String jsonFilePath) {
 		ObjectMapper objectMapper = new ObjectMapper();
 		ArrayList<Libro> libros = new ArrayList<>();
 

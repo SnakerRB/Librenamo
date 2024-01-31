@@ -18,9 +18,9 @@ public class Programa {
 
 		// -------------------- IMPORTAR OBJETOS DESDE JSON --------------------
 		//Ruta al archivo JSON en la carpeta resources
-		String jsonFileLibros = "src/main/resources/libros.json";
-		String jsonFileEmpleados = "";
-		String jsonFileventas = "";
+		//String jsonFileLibros = "src/main/resources/libros.json";
+		//String jsonFileEmpleados = "";
+		//String jsonFileventas = "";
 		
 		//AWS_DDB_Libros.ImportFromJson(AWS_DDB_Login.Logg(), jsonFileLibros);
 		//AWS_DDB_Empleados.ImportFromJson();
@@ -37,15 +37,15 @@ public class Programa {
 		
 		// -------------------- INSERTAR 1 LIBRO -------------------- OK
 		// Crea un objeto Libro con los detalles del libro que deseas insertar
-		Libro libro = new Libro();
-		libro.setISBN("ISBN-00100");
-		libro.setTitulo("Libro 100");
-		libro.setAutor("Autor B");
-		libro.setAnio("1992");
-		libro.setEditorial("Editorial 4");
-		libro.setGenero("Ficción");
-		libro.setPrecio("25.50");
-		libro.setExistencias("20");
+//		Libro libro = new Libro();
+//		libro.setISBN("ISBN-00100");
+//		libro.setTitulo("Libro 100");
+//		libro.setAutor("Autor B");
+//		libro.setAnio("1992");
+//		libro.setEditorial("Editorial 4");
+//		libro.setGenero("Ficción");
+//		libro.setPrecio("25.50");
+//		libro.setExistencias("20");
 
 		// Llama al método para insertar el libro en la tabla
 		//AWS_DDB_Libros.Create(AWS_DDB_Login.Logg(), libro);
@@ -58,9 +58,9 @@ public class Programa {
 		// -------------------- EDITAR 1 LIBRO -------------------- Falta return con los nuevos datos
 		
 				
-		String isbnToUpdate = "ISBN-00100";
-		String atribToUpdate = "Titulo";
-		String valueToUpdate = "TONTO";
+//		String isbnToUpdate = "ISBN-00100";
+//		String atribToUpdate = "Titulo";
+//		String valueToUpdate = "TONTO";
 		
 		//AWS_DDB_Libros.Edit(AWS_DDB_Login.LoggMain(accessKey, secretKey, sessionToken), isbnToUpdate, atribToUpdate, valueToUpdate);
 		//AWS_DDB_Libros.Edit(AWS_DDB_Login.Logg(), isbnToUpdate, atribToUpdate, valueToUpdate);
@@ -120,7 +120,8 @@ public class Programa {
 		String tabla = "Libros";
 		
 		
-		AWS_DDB_Select.SelectAll(AWS_DDB_Login.Logg(), tabla);
+		//AWS_DDB_Select.SelectAll(AWS_DDB_Login.Logg(), tabla);
+		AWS_DDB_Select.buscarItem(AWS_DDB_Login.Logg(), tabla, "ISBN-00100");
 		
 	}
 

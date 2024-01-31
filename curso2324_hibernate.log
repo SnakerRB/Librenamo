@@ -1,2 +1,0 @@
-2024-01-30 17:48:58,760 [main] INFO  aws.connection.AWS_DDB_Select            - ISBN: ISBN-00000, Genero: Ciencia Ficcion, Autor: Autor 0, Existencias: 50, Titulo: Libro 0, Anio: 1999, Editorial: Editorial 1, Precio: 23, 
-2024-01-30 17:48:58,766 [main] INFO  aws.connection.AWS_DDB_Select            - ISBN: ISBN-00100, Genero: Ficción, Autor: Autor POPO, Existencias: 20, Titulo: TONTO, Anio: 1992, Editorial: Editorial 4, Precio: 25.5, 

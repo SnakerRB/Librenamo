@@ -8,7 +8,7 @@
 	</appender>
 	
 	<appender name="Fichero" class="ch.qos.logback.core.FileAppender">
-		<file>curso2324_hibernate.log</file>
+		<file>DynamoDB.log</file>
 		<encoder>
 			<pattern>%d [%thread] %-5level %-40logger{50} - %msg%n</pattern>
 		</encoder>
