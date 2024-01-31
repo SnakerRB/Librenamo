@@ -3,3 +3,21 @@
 2024-01-31 11:10:01,263 [main] ERROR aws.connection.AWS_DDB_Select            - Error al buscar el item: Empty attribute name (Service: DynamoDb, Status Code: 400, Request ID: 4VQD18RRJ5SBAUVHC4FNLF839RVV4KQNSO5AEMVJF66Q9ASUAAJG)
 2024-01-31 11:20:37,603 [main] ERROR aws.connection.AWS_DDB_Select            - Error al buscar el item: The provided key element does not match the schema (Service: DynamoDb, Status Code: 400, Request ID: O3D2NRKHJL7E8Q482UBSOQ211FVV4KQNSO5AEMVJF66Q9ASUAAJG)
 2024-01-31 11:28:34,566 [main] ERROR aws.connection.AWS_DDB_Select            - Error al buscar el item: The provided key element does not match the schema (Service: DynamoDb, Status Code: 400, Request ID: 7DCL3MJC2D19LJ9C84PQK8UKOBVV4KQNSO5AEMVJF66Q9ASUAAJG)
+2024-01-31 11:46:12,935 [main] INFO  aws.connection.AWS_DDB_Properties        - Fichero Properties Cargado correctamente
+2024-01-31 11:46:12,943 [main] INFO  aws.connection.AWS_DDB_Login             - Credenciales cargadas correctamente
+2024-01-31 11:46:12,944 [main] INFO  aws.connection.AWS_DDB_Login             - Access Key: ASIAY7LABMP7JK7YUAPY
+2024-01-31 11:46:12,946 [main] INFO  aws.connection.AWS_DDB_Login             - Secret Key: yqERbxH/QS2sQQBfZhphgpuF2GzTxO33pt4HfxHT
+2024-01-31 11:46:12,946 [main] INFO  aws.connection.AWS_DDB_Login             - Session Token: FwoGZXIvYXdzEHMaDGp0ENRIqqinsHi5KyLCASyLWkxxL+tHx6beKDst7xI/6V6Kie9H91fbPTiCNWN6FBpIqu5qesScuHr3rDsGY7HMcjPJ/zZqspVmyQWdgZA0I0PmNkq3rZ75bJyZDFeZ+0t0NlD23b33Q9hGraP6UuTNQn02yRZYmRAwwIXjEGWptuXpY9E4rXVy/3Vp5J2sjQNs/T4tXM6KexA3zRVeb3tuc6CB1DpteNIbH3QIXhqvBLE32rS3WoVIz3qRw+6wOYlkvp/jURfTssdqImSP3GZgKPWq6K0GMi16hNZH6YnSj3zLQOcCP9bYQtsnbdB0mf1xyLR7UdWKIX4AAN8VIRBLmbu8HwE=
+2024-01-31 12:05:01,331 [main] INFO  aws.connection.AWS_DDB_Properties        - Fichero Properties Cargado correctamente
+2024-01-31 12:05:01,340 [main] INFO  aws.connection.AWS_DDB_Login             - Credenciales cargadas correctamente
+2024-01-31 12:05:01,341 [main] INFO  aws.connection.AWS_DDB_Login             - Access Key: ASIAY7LABMP7JK7YUAPY
+2024-01-31 12:05:01,341 [main] INFO  aws.connection.AWS_DDB_Login             - Secret Key: yqERbxH/QS2sQQBfZhphgpuF2GzTxO33pt4HfxHT
+2024-01-31 12:05:01,341 [main] INFO  aws.connection.AWS_DDB_Login             - Session Token: FwoGZXIvYXdzEHMaDGp0ENRIqqinsHi5KyLCASyLWkxxL+tHx6beKDst7xI/6V6Kie9H91fbPTiCNWN6FBpIqu5qesScuHr3rDsGY7HMcjPJ/zZqspVmyQWdgZA0I0PmNkq3rZ75bJyZDFeZ+0t0NlD23b33Q9hGraP6UuTNQn02yRZYmRAwwIXjEGWptuXpY9E4rXVy/3Vp5J2sjQNs/T4tXM6KexA3zRVeb3tuc6CB1DpteNIbH3QIXhqvBLE32rS3WoVIz3qRw+6wOYlkvp/jURfTssdqImSP3GZgKPWq6K0GMi16hNZH6YnSj3zLQOcCP9bYQtsnbdB0mf1xyLR7UdWKIX4AAN8VIRBLmbu8HwE=
+2024-01-31 12:05:44,584 [main] INFO  aws.connection.AWS_DDB_Properties        - Fichero Properties Cargado correctamente
+2024-01-31 12:05:44,589 [main] INFO  aws.connection.AWS_DDB_Login             - Credenciales cargadas correctamente
+2024-01-31 12:05:46,423 [main] INFO  aws.connection.AWS_DDB_Select            - Nombre: Daniel
+2024-01-31 12:05:46,423 [main] INFO  aws.connection.AWS_DDB_Select            - Cargo: CEO
+2024-01-31 12:05:46,423 [main] INFO  aws.connection.AWS_DDB_Select            - EmpleadoID: EMP_0001
+2024-01-31 12:05:46,424 [main] INFO  aws.connection.AWS_DDB_Select            - FechaContrato: 1/01/2024
+2024-01-31 12:05:46,424 [main] INFO  aws.connection.AWS_DDB_Select            - Apellido: Rodriguez
+2024-01-31 12:05:46,424 [main] INFO  aws.connection.AWS_DDB_Select            - Direccion: Av. de los Artesanos 66 

@@ -2,19 +2,7 @@ package aws.connection;
 
 public class Programa {
 	public static void main(String[] args) {
-		/*
-		 * PARA CONECTARNOS AL LA BBDD DE DYNAMO DB 
-		 * 
-		 * -INSERTAR ACCES KEY GENERADA EN LA SESIÓN
-		 * -INSERTAR SECRET KEY GENERADA EN LA SESIÓN
-		 * -INSERTAR SESSION TOKEN GENERADA EN LA SESIÓN
-		 * 
-		
-		System.out.println("--INICIO DE SESION EN DynamoDB NECESARIO--");
-		String accessKey="ASIAY7LABMP7F3I6IXFY";
-		String secretKey="sYO5eRTxnSzg+I1midVAJMw0D8WWfPx1My1Z2hip";
-		String sessionToken="FwoGZXIvYXdzEEsaDL3HhE17PHIDlL0NHiLCAcV8j8UW5nzHg+gXOBRYzEo36PuMmfKykZ0rLi7yGdW3bqTznDX6wDjWgTRmdMGJAGGxOk5fkADr8gzO5OlGEa3kgaHNRQA9eIJqe2TZ+1YcBZhKv0MuxAAfyXRVEmuqTaNJyGHYvIY+zov00JAPyQtQzynIXsk6jQ8qcDe0X4TN/sDFLTcZgnVyxNuGmYzJVdZxQFIxms+CEgzrDjqeQ0IaPkfg9b5Gxbc+lmjChl7pEZkuu2QHeKDz8C6WZ4a55SGtKNa8360GMi2seGnw7oiHJkLYIIGikORJ0ConOjTDuUSGK2NJ/LtCXVAsKabVPr93naBfafU= ";
-		 */	
+
 
 		// -------------------- IMPORTAR OBJETOS DESDE JSON --------------------
 		//Ruta al archivo JSON en la carpeta resources
@@ -126,7 +114,7 @@ public class Programa {
 		//_____________________________ LISTAR UN ITEM ESPECIFICOO ______________________________ 
 		String tabla = "Ventas";
 		
-		AWS_DDB_Select.buscarItem(AWS_DDB_Login.Logg(), tabla, "VEN_0001", "11/09/2011");
+		AWS_DDB_Select.buscarItem(AWS_DDB_Login.Logg(), tabla, "VEN_0000", "26/01/2024");
 		
 	}
 

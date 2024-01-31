@@ -1,12 +1,1002 @@
 [
   {
-    "ISBN": { "S": "ISBN-00000" },
-    "Titulo": { "S": "Libro 0" },
-    "Anio": { "N": "1929" },
-    "Autor": { "S": "Autor C" },
-    "Editorial": { "S": "Editorial 2" },
-    "Existencias": { "N": "37" },
-    "Genero": { "S": "Suspenso" },
-    "Precio": { "N": "69.31" }
+    "ISBN": "ISBN-00000",
+    "Anio": 1960,
+    "Autor": "Autor C",
+    "Editorial": "Editorial 4",
+    "Existencias": 47,
+    "Genero": "Hist\u00f3rico",
+    "Precio": 63.17,
+    "Titulo": "Libro 0"
+  },
+  {
+    "ISBN": "ISBN-00001",
+    "Anio": 2006,
+    "Autor": "Autor D",
+    "Editorial": "Editorial 4",
+    "Existencias": 29,
+    "Genero": "Ciencia Ficci\u00f3n",
+    "Precio": 62.58,
+    "Titulo": "Libro 1"
+  },
+  {
+    "ISBN": "ISBN-00002",
+    "Anio": 1912,
+    "Autor": "Autor C",
+    "Editorial": "Editorial 1",
+    "Existencias": 43,
+    "Genero": "Autoayuda",
+    "Precio": 12.26,
+    "Titulo": "Libro 2"
+  },
+  {
+    "ISBN": "ISBN-00003",
+    "Anio": 1936,
+    "Autor": "Autor C",
+    "Editorial": "Editorial 2",
+    "Existencias": 49,
+    "Genero": "Pol\u00edtica",
+    "Precio": 25.35,
+    "Titulo": "Libro 3"
+  },
+  {
+    "ISBN": "ISBN-00004",
+    "Anio": 1959,
+    "Autor": "Autor C",
+    "Editorial": "Editorial 3",
+    "Existencias": 66,
+    "Genero": "Ciencia",
+    "Precio": 88.41,
+    "Titulo": "Libro 4"
+  },
+  {
+    "ISBN": "ISBN-00005",
+    "Anio": 1968,
+    "Autor": "Autor C",
+    "Editorial": "Editorial 4",
+    "Existencias": 30,
+    "Genero": "Suspenso",
+    "Precio": 44.71,
+    "Titulo": "Libro 5"
+  },
+  {
+    "ISBN": "ISBN-00006",
+    "Anio": 1996,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 1",
+    "Existencias": 8,
+    "Genero": "Ciencia Ficci\u00f3n",
+    "Precio": 41.35,
+    "Titulo": "Libro 6"
+  },
+  {
+    "ISBN": "ISBN-00007",
+    "Anio": 1943,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 1",
+    "Existencias": 90,
+    "Genero": "Terror",
+    "Precio": 53.21,
+    "Titulo": "Libro 7"
+  },
+  {
+    "ISBN": "ISBN-00008",
+    "Anio": 1909,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 2",
+    "Existencias": 43,
+    "Genero": "No Ficci\u00f3n",
+    "Precio": 42.07,
+    "Titulo": "Libro 8"
+  },
+  {
+    "ISBN": "ISBN-00009",
+    "Anio": 1980,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 2",
+    "Existencias": 1,
+    "Genero": "Hist\u00f3rico",
+    "Precio": 32.64,
+    "Titulo": "Libro 9"
+  },
+  {
+    "ISBN": "ISBN-00010",
+    "Anio": 1909,
+    "Autor": "Autor A",
+    "Editorial": "Editorial 3",
+    "Existencias": 33,
+    "Genero": "Ciencia",
+    "Precio": 11.61,
+    "Titulo": "Libro 10"
+  },
+  {
+    "ISBN": "ISBN-00011",
+    "Anio": 1985,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 3",
+    "Existencias": 99,
+    "Genero": "Misterio",
+    "Precio": 32.45,
+    "Titulo": "Libro 11"
+  },
+  {
+    "ISBN": "ISBN-00012",
+    "Anio": 1944,
+    "Autor": "Autor C",
+    "Editorial": "Editorial 1",
+    "Existencias": 9,
+    "Genero": "No Ficci\u00f3n",
+    "Precio": 80.88,
+    "Titulo": "Libro 12"
+  },
+  {
+    "ISBN": "ISBN-00013",
+    "Anio": 1962,
+    "Autor": "Autor A",
+    "Editorial": "Editorial 3",
+    "Existencias": 90,
+    "Genero": "Biograf\u00eda",
+    "Precio": 30.68,
+    "Titulo": "Libro 13"
+  },
+  {
+    "ISBN": "ISBN-00014",
+    "Anio": 1943,
+    "Autor": "Autor D",
+    "Editorial": "Editorial 2",
+    "Existencias": 10,
+    "Genero": "Misterio",
+    "Precio": 78.95,
+    "Titulo": "Libro 14"
+  },
+  {
+    "ISBN": "ISBN-00015",
+    "Anio": 1993,
+    "Autor": "Autor D",
+    "Editorial": "Editorial 3",
+    "Existencias": 87,
+    "Genero": "Pol\u00edtica",
+    "Precio": 62.2,
+    "Titulo": "Libro 15"
+  },
+  {
+    "ISBN": "ISBN-00016",
+    "Anio": 2011,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 1",
+    "Existencias": 42,
+    "Genero": "Pol\u00edtica",
+    "Precio": 29.17,
+    "Titulo": "Libro 16"
+  },
+  {
+    "ISBN": "ISBN-00017",
+    "Anio": 1983,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 2",
+    "Existencias": 10,
+    "Genero": "Misterio",
+    "Precio": 81.49,
+    "Titulo": "Libro 17"
+  },
+  {
+    "ISBN": "ISBN-00018",
+    "Anio": 2017,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 2",
+    "Existencias": 65,
+    "Genero": "Ficci\u00f3n",
+    "Precio": 47.88,
+    "Titulo": "Libro 18"
+  },
+  {
+    "ISBN": "ISBN-00019",
+    "Anio": 2020,
+    "Autor": "Autor D",
+    "Editorial": "Editorial 2",
+    "Existencias": 23,
+    "Genero": "Ciencia",
+    "Precio": 35.88,
+    "Titulo": "Libro 19"
+  },
+  {
+    "ISBN": "ISBN-00020",
+    "Anio": 1909,
+    "Autor": "Autor A",
+    "Editorial": "Editorial 4",
+    "Existencias": 57,
+    "Genero": "Ciencia Ficci\u00f3n",
+    "Precio": 95.39,
+    "Titulo": "Libro 20"
+  },
+  {
+    "ISBN": "ISBN-00021",
+    "Anio": 2002,
+    "Autor": "Autor A",
+    "Editorial": "Editorial 4",
+    "Existencias": 48,
+    "Genero": "Biograf\u00eda",
+    "Precio": 74.1,
+    "Titulo": "Libro 21"
+  },
+  {
+    "ISBN": "ISBN-00022",
+    "Anio": 1960,
+    "Autor": "Autor A",
+    "Editorial": "Editorial 4",
+    "Existencias": 27,
+    "Genero": "Ciencia",
+    "Precio": 90.4,
+    "Titulo": "Libro 22"
+  },
+  {
+    "ISBN": "ISBN-00023",
+    "Anio": 1921,
+    "Autor": "Autor D",
+    "Editorial": "Editorial 3",
+    "Existencias": 69,
+    "Genero": "Biograf\u00eda",
+    "Precio": 51.84,
+    "Titulo": "Libro 23"
+  },
+  {
+    "ISBN": "ISBN-00024",
+    "Anio": 1965,
+    "Autor": "Autor A",
+    "Editorial": "Editorial 1",
+    "Existencias": 16,
+    "Genero": "Aventura",
+    "Precio": 58.78,
+    "Titulo": "Libro 24"
+  },
+  {
+    "ISBN": "ISBN-00025",
+    "Anio": 1939,
+    "Autor": "Autor A",
+    "Editorial": "Editorial 3",
+    "Existencias": 84,
+    "Genero": "Ciencia",
+    "Precio": 67.7,
+    "Titulo": "Libro 25"
+  },
+  {
+    "ISBN": "ISBN-00026",
+    "Anio": 1911,
+    "Autor": "Autor C",
+    "Editorial": "Editorial 4",
+    "Existencias": 14,
+    "Genero": "Drama",
+    "Precio": 12.49,
+    "Titulo": "Libro 26"
+  },
+  {
+    "ISBN": "ISBN-00027",
+    "Anio": 2015,
+    "Autor": "Autor A",
+    "Editorial": "Editorial 3",
+    "Existencias": 92,
+    "Genero": "Fantas\u00eda",
+    "Precio": 32.25,
+    "Titulo": "Libro 27"
+  },
+  {
+    "ISBN": "ISBN-00028",
+    "Anio": 1953,
+    "Autor": "Autor C",
+    "Editorial": "Editorial 4",
+    "Existencias": 75,
+    "Genero": "Terror",
+    "Precio": 94.8,
+    "Titulo": "Libro 28"
+  },
+  {
+    "ISBN": "ISBN-00029",
+    "Anio": 1972,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 3",
+    "Existencias": 58,
+    "Genero": "No Ficci\u00f3n",
+    "Precio": 13.82,
+    "Titulo": "Libro 29"
+  },
+  {
+    "ISBN": "ISBN-00030",
+    "Anio": 1963,
+    "Autor": "Autor D",
+    "Editorial": "Editorial 2",
+    "Existencias": 19,
+    "Genero": "Drama",
+    "Precio": 12.64,
+    "Titulo": "Libro 30"
+  },
+  {
+    "ISBN": "ISBN-00031",
+    "Anio": 1954,
+    "Autor": "Autor D",
+    "Editorial": "Editorial 2",
+    "Existencias": 2,
+    "Genero": "Hist\u00f3rico",
+    "Precio": 91.07,
+    "Titulo": "Libro 31"
+  },
+  {
+    "ISBN": "ISBN-00032",
+    "Anio": 1945,
+    "Autor": "Autor D",
+    "Editorial": "Editorial 1",
+    "Existencias": 62,
+    "Genero": "Ficci\u00f3n",
+    "Precio": 89.18,
+    "Titulo": "Libro 32"
+  },
+  {
+    "ISBN": "ISBN-00033",
+    "Anio": 2001,
+    "Autor": "Autor D",
+    "Editorial": "Editorial 1",
+    "Existencias": 60,
+    "Genero": "Misterio",
+    "Precio": 31.36,
+    "Titulo": "Libro 33"
+  },
+  {
+    "ISBN": "ISBN-00034",
+    "Anio": 1904,
+    "Autor": "Autor A",
+    "Editorial": "Editorial 2",
+    "Existencias": 19,
+    "Genero": "Misterio",
+    "Precio": 61.49,
+    "Titulo": "Libro 34"
+  },
+  {
+    "ISBN": "ISBN-00035",
+    "Anio": 1975,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 2",
+    "Existencias": 14,
+    "Genero": "Pol\u00edtica",
+    "Precio": 56.34,
+    "Titulo": "Libro 35"
+  },
+  {
+    "ISBN": "ISBN-00036",
+    "Anio": 1913,
+    "Autor": "Autor C",
+    "Editorial": "Editorial 2",
+    "Existencias": 78,
+    "Genero": "Ciencia Ficci\u00f3n",
+    "Precio": 96.45,
+    "Titulo": "Libro 36"
+  },
+  {
+    "ISBN": "ISBN-00037",
+    "Anio": 1941,
+    "Autor": "Autor A",
+    "Editorial": "Editorial 3",
+    "Existencias": 98,
+    "Genero": "Ciencia Ficci\u00f3n",
+    "Precio": 44.35,
+    "Titulo": "Libro 37"
+  },
+  {
+    "ISBN": "ISBN-00038",
+    "Anio": 1980,
+    "Autor": "Autor D",
+    "Editorial": "Editorial 2",
+    "Existencias": 86,
+    "Genero": "Ficci\u00f3n",
+    "Precio": 44.66,
+    "Titulo": "Libro 38"
+  },
+  {
+    "ISBN": "ISBN-00039",
+    "Anio": 1966,
+    "Autor": "Autor D",
+    "Editorial": "Editorial 4",
+    "Existencias": 49,
+    "Genero": "Fantas\u00eda",
+    "Precio": 63.42,
+    "Titulo": "Libro 39"
+  },
+  {
+    "ISBN": "ISBN-00040",
+    "Anio": 1914,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 3",
+    "Existencias": 99,
+    "Genero": "Hist\u00f3rico",
+    "Precio": 41.83,
+    "Titulo": "Libro 40"
+  },
+  {
+    "ISBN": "ISBN-00041",
+    "Anio": 1931,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 1",
+    "Existencias": 18,
+    "Genero": "Drama",
+    "Precio": 95.1,
+    "Titulo": "Libro 41"
+  },
+  {
+    "ISBN": "ISBN-00042",
+    "Anio": 1933,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 4",
+    "Existencias": 19,
+    "Genero": "Fantas\u00eda",
+    "Precio": 17.62,
+    "Titulo": "Libro 42"
+  },
+  {
+    "ISBN": "ISBN-00043",
+    "Anio": 1906,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 4",
+    "Existencias": 72,
+    "Genero": "Ciencia Ficci\u00f3n",
+    "Precio": 68.36,
+    "Titulo": "Libro 43"
+  },
+  {
+    "ISBN": "ISBN-00044",
+    "Anio": 1970,
+    "Autor": "Autor D",
+    "Editorial": "Editorial 3",
+    "Existencias": 38,
+    "Genero": "Drama",
+    "Precio": 65.77,
+    "Titulo": "Libro 44"
+  },
+  {
+    "ISBN": "ISBN-00045",
+    "Anio": 1996,
+    "Autor": "Autor C",
+    "Editorial": "Editorial 1",
+    "Existencias": 1,
+    "Genero": "Suspenso",
+    "Precio": 73.65,
+    "Titulo": "Libro 45"
+  },
+  {
+    "ISBN": "ISBN-00046",
+    "Anio": 2004,
+    "Autor": "Autor C",
+    "Editorial": "Editorial 3",
+    "Existencias": 39,
+    "Genero": "Romance",
+    "Precio": 11.96,
+    "Titulo": "Libro 46"
+  },
+  {
+    "ISBN": "ISBN-00047",
+    "Anio": 1911,
+    "Autor": "Autor C",
+    "Editorial": "Editorial 1",
+    "Existencias": 11,
+    "Genero": "No Ficci\u00f3n",
+    "Precio": 50.98,
+    "Titulo": "Libro 47"
+  },
+  {
+    "ISBN": "ISBN-00048",
+    "Anio": 1962,
+    "Autor": "Autor C",
+    "Editorial": "Editorial 4",
+    "Existencias": 94,
+    "Genero": "Ciencia",
+    "Precio": 62.12,
+    "Titulo": "Libro 48"
+  },
+  {
+    "ISBN": "ISBN-00049",
+    "Anio": 1918,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 4",
+    "Existencias": 11,
+    "Genero": "Ciencia Ficci\u00f3n",
+    "Precio": 71.4,
+    "Titulo": "Libro 49"
+  },
+  {
+    "ISBN": "ISBN-00050",
+    "Anio": 1916,
+    "Autor": "Autor C",
+    "Editorial": "Editorial 1",
+    "Existencias": 39,
+    "Genero": "Fantas\u00eda",
+    "Precio": 35.11,
+    "Titulo": "Libro 50"
+  },
+  {
+    "ISBN": "ISBN-00051",
+    "Anio": 1987,
+    "Autor": "Autor D",
+    "Editorial": "Editorial 1",
+    "Existencias": 28,
+    "Genero": "Fantas\u00eda",
+    "Precio": 48.67,
+    "Titulo": "Libro 51"
+  },
+  {
+    "ISBN": "ISBN-00052",
+    "Anio": 1959,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 2",
+    "Existencias": 7,
+    "Genero": "Ciencia Ficci\u00f3n",
+    "Precio": 10.19,
+    "Titulo": "Libro 52"
+  },
+  {
+    "ISBN": "ISBN-00053",
+    "Anio": 2010,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 2",
+    "Existencias": 57,
+    "Genero": "Aventura",
+    "Precio": 82.53,
+    "Titulo": "Libro 53"
+  },
+  {
+    "ISBN": "ISBN-00054",
+    "Anio": 1970,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 1",
+    "Existencias": 56,
+    "Genero": "Aventura",
+    "Precio": 41.64,
+    "Titulo": "Libro 54"
+  },
+  {
+    "ISBN": "ISBN-00055",
+    "Anio": 1944,
+    "Autor": "Autor C",
+    "Editorial": "Editorial 3",
+    "Existencias": 89,
+    "Genero": "Misterio",
+    "Precio": 93.08,
+    "Titulo": "Libro 55"
+  },
+  {
+    "ISBN": "ISBN-00056",
+    "Anio": 1931,
+    "Autor": "Autor C",
+    "Editorial": "Editorial 1",
+    "Existencias": 69,
+    "Genero": "Ciencia",
+    "Precio": 75.05,
+    "Titulo": "Libro 56"
+  },
+  {
+    "ISBN": "ISBN-00057",
+    "Anio": 1909,
+    "Autor": "Autor A",
+    "Editorial": "Editorial 1",
+    "Existencias": 26,
+    "Genero": "Pol\u00edtica",
+    "Precio": 24.86,
+    "Titulo": "Libro 57"
+  },
+  {
+    "ISBN": "ISBN-00058",
+    "Anio": 1927,
+    "Autor": "Autor C",
+    "Editorial": "Editorial 4",
+    "Existencias": 5,
+    "Genero": "Hist\u00f3rico",
+    "Precio": 11.26,
+    "Titulo": "Libro 58"
+  },
+  {
+    "ISBN": "ISBN-00059",
+    "Anio": 1958,
+    "Autor": "Autor A",
+    "Editorial": "Editorial 2",
+    "Existencias": 91,
+    "Genero": "Terror",
+    "Precio": 89.0,
+    "Titulo": "Libro 59"
+  },
+  {
+    "ISBN": "ISBN-00060",
+    "Anio": 1962,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 2",
+    "Existencias": 21,
+    "Genero": "Fantas\u00eda",
+    "Precio": 81.84,
+    "Titulo": "Libro 60"
+  },
+  {
+    "ISBN": "ISBN-00061",
+    "Anio": 1962,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 3",
+    "Existencias": 60,
+    "Genero": "Aventura",
+    "Precio": 51.34,
+    "Titulo": "Libro 61"
+  },
+  {
+    "ISBN": "ISBN-00062",
+    "Anio": 1957,
+    "Autor": "Autor A",
+    "Editorial": "Editorial 2",
+    "Existencias": 69,
+    "Genero": "Drama",
+    "Precio": 93.6,
+    "Titulo": "Libro 62"
+  },
+  {
+    "ISBN": "ISBN-00063",
+    "Anio": 1943,
+    "Autor": "Autor C",
+    "Editorial": "Editorial 3",
+    "Existencias": 73,
+    "Genero": "Hist\u00f3rico",
+    "Precio": 12.5,
+    "Titulo": "Libro 63"
+  },
+  {
+    "ISBN": "ISBN-00064",
+    "Anio": 1930,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 2",
+    "Existencias": 62,
+    "Genero": "Autoayuda",
+    "Precio": 25.61,
+    "Titulo": "Libro 64"
+  },
+  {
+    "ISBN": "ISBN-00065",
+    "Anio": 1910,
+    "Autor": "Autor C",
+    "Editorial": "Editorial 3",
+    "Existencias": 96,
+    "Genero": "Fantas\u00eda",
+    "Precio": 55.46,
+    "Titulo": "Libro 65"
+  },
+  {
+    "ISBN": "ISBN-00066",
+    "Anio": 2015,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 1",
+    "Existencias": 81,
+    "Genero": "Ciencia",
+    "Precio": 62.76,
+    "Titulo": "Libro 66"
+  },
+  {
+    "ISBN": "ISBN-00067",
+    "Anio": 1988,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 4",
+    "Existencias": 82,
+    "Genero": "Aventura",
+    "Precio": 56.02,
+    "Titulo": "Libro 67"
+  },
+  {
+    "ISBN": "ISBN-00068",
+    "Anio": 1948,
+    "Autor": "Autor A",
+    "Editorial": "Editorial 3",
+    "Existencias": 55,
+    "Genero": "Romance",
+    "Precio": 90.67,
+    "Titulo": "Libro 68"
+  },
+  {
+    "ISBN": "ISBN-00069",
+    "Anio": 1930,
+    "Autor": "Autor D",
+    "Editorial": "Editorial 4",
+    "Existencias": 85,
+    "Genero": "Biograf\u00eda",
+    "Precio": 47.64,
+    "Titulo": "Libro 69"
+  },
+  {
+    "ISBN": "ISBN-00070",
+    "Anio": 1901,
+    "Autor": "Autor C",
+    "Editorial": "Editorial 4",
+    "Existencias": 64,
+    "Genero": "Aventura",
+    "Precio": 93.6,
+    "Titulo": "Libro 70"
+  },
+  {
+    "ISBN": "ISBN-00071",
+    "Anio": 2016,
+    "Autor": "Autor C",
+    "Editorial": "Editorial 1",
+    "Existencias": 2,
+    "Genero": "Misterio",
+    "Precio": 83.03,
+    "Titulo": "Libro 71"
+  },
+  {
+    "ISBN": "ISBN-00072",
+    "Anio": 2018,
+    "Autor": "Autor A",
+    "Editorial": "Editorial 4",
+    "Existencias": 42,
+    "Genero": "Biograf\u00eda",
+    "Precio": 75.28,
+    "Titulo": "Libro 72"
+  },
+  {
+    "ISBN": "ISBN-00073",
+    "Anio": 2022,
+    "Autor": "Autor D",
+    "Editorial": "Editorial 3",
+    "Existencias": 100,
+    "Genero": "Ciencia Ficci\u00f3n",
+    "Precio": 26.2,
+    "Titulo": "Libro 73"
+  },
+  {
+    "ISBN": "ISBN-00074",
+    "Anio": 1935,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 4",
+    "Existencias": 55,
+    "Genero": "Ciencia Ficci\u00f3n",
+    "Precio": 54.58,
+    "Titulo": "Libro 74"
+  },
+  {
+    "ISBN": "ISBN-00075",
+    "Anio": 1951,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 1",
+    "Existencias": 29,
+    "Genero": "Drama",
+    "Precio": 86.47,
+    "Titulo": "Libro 75"
+  },
+  {
+    "ISBN": "ISBN-00076",
+    "Anio": 1966,
+    "Autor": "Autor A",
+    "Editorial": "Editorial 3",
+    "Existencias": 11,
+    "Genero": "Autoayuda",
+    "Precio": 32.2,
+    "Titulo": "Libro 76"
+  },
+  {
+    "ISBN": "ISBN-00077",
+    "Anio": 2023,
+    "Autor": "Autor D",
+    "Editorial": "Editorial 1",
+    "Existencias": 76,
+    "Genero": "Ciencia Ficci\u00f3n",
+    "Precio": 88.43,
+    "Titulo": "Libro 77"
+  },
+  {
+    "ISBN": "ISBN-00078",
+    "Anio": 1904,
+    "Autor": "Autor D",
+    "Editorial": "Editorial 2",
+    "Existencias": 41,
+    "Genero": "Terror",
+    "Precio": 61.67,
+    "Titulo": "Libro 78"
+  },
+  {
+    "ISBN": "ISBN-00079",
+    "Anio": 1964,
+    "Autor": "Autor C",
+    "Editorial": "Editorial 1",
+    "Existencias": 83,
+    "Genero": "Ciencia",
+    "Precio": 14.24,
+    "Titulo": "Libro 79"
+  },
+  {
+    "ISBN": "ISBN-00080",
+    "Anio": 1909,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 1",
+    "Existencias": 61,
+    "Genero": "Autoayuda",
+    "Precio": 81.36,
+    "Titulo": "Libro 80"
+  },
+  {
+    "ISBN": "ISBN-00081",
+    "Anio": 1956,
+    "Autor": "Autor A",
+    "Editorial": "Editorial 1",
+    "Existencias": 50,
+    "Genero": "Fantas\u00eda",
+    "Precio": 96.61,
+    "Titulo": "Libro 81"
+  },
+  {
+    "ISBN": "ISBN-00082",
+    "Anio": 1913,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 3",
+    "Existencias": 29,
+    "Genero": "Drama",
+    "Precio": 78.26,
+    "Titulo": "Libro 82"
+  },
+  {
+    "ISBN": "ISBN-00083",
+    "Anio": 1914,
+    "Autor": "Autor D",
+    "Editorial": "Editorial 2",
+    "Existencias": 58,
+    "Genero": "No Ficci\u00f3n",
+    "Precio": 55.14,
+    "Titulo": "Libro 83"
+  },
+  {
+    "ISBN": "ISBN-00084",
+    "Anio": 2002,
+    "Autor": "Autor C",
+    "Editorial": "Editorial 3",
+    "Existencias": 41,
+    "Genero": "No Ficci\u00f3n",
+    "Precio": 75.9,
+    "Titulo": "Libro 84"
+  },
+  {
+    "ISBN": "ISBN-00085",
+    "Anio": 1905,
+    "Autor": "Autor D",
+    "Editorial": "Editorial 3",
+    "Existencias": 26,
+    "Genero": "Fantas\u00eda",
+    "Precio": 13.97,
+    "Titulo": "Libro 85"
+  },
+  {
+    "ISBN": "ISBN-00086",
+    "Anio": 1999,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 2",
+    "Existencias": 4,
+    "Genero": "Drama",
+    "Precio": 66.34,
+    "Titulo": "Libro 86"
+  },
+  {
+    "ISBN": "ISBN-00087",
+    "Anio": 1932,
+    "Autor": "Autor D",
+    "Editorial": "Editorial 1",
+    "Existencias": 100,
+    "Genero": "Romance",
+    "Precio": 63.92,
+    "Titulo": "Libro 87"
+  },
+  {
+    "ISBN": "ISBN-00088",
+    "Anio": 2002,
+    "Autor": "Autor D",
+    "Editorial": "Editorial 4",
+    "Existencias": 43,
+    "Genero": "No Ficci\u00f3n",
+    "Precio": 66.38,
+    "Titulo": "Libro 88"
+  },
+  {
+    "ISBN": "ISBN-00089",
+    "Anio": 1907,
+    "Autor": "Autor D",
+    "Editorial": "Editorial 3",
+    "Existencias": 66,
+    "Genero": "Drama",
+    "Precio": 30.1,
+    "Titulo": "Libro 89"
+  },
+  {
+    "ISBN": "ISBN-00090",
+    "Anio": 1984,
+    "Autor": "Autor C",
+    "Editorial": "Editorial 2",
+    "Existencias": 45,
+    "Genero": "Drama",
+    "Precio": 33.88,
+    "Titulo": "Libro 90"
+  },
+  {
+    "ISBN": "ISBN-00091",
+    "Anio": 1956,
+    "Autor": "Autor C",
+    "Editorial": "Editorial 2",
+    "Existencias": 56,
+    "Genero": "Aventura",
+    "Precio": 38.6,
+    "Titulo": "Libro 91"
+  },
+  {
+    "ISBN": "ISBN-00092",
+    "Anio": 1914,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 3",
+    "Existencias": 91,
+    "Genero": "Ciencia Ficci\u00f3n",
+    "Precio": 33.94,
+    "Titulo": "Libro 92"
+  },
+  {
+    "ISBN": "ISBN-00093",
+    "Anio": 2002,
+    "Autor": "Autor C",
+    "Editorial": "Editorial 2",
+    "Existencias": 62,
+    "Genero": "Ciencia",
+    "Precio": 67.31,
+    "Titulo": "Libro 93"
+  },
+  {
+    "ISBN": "ISBN-00094",
+    "Anio": 2011,
+    "Autor": "Autor A",
+    "Editorial": "Editorial 4",
+    "Existencias": 2,
+    "Genero": "Autoayuda",
+    "Precio": 66.66,
+    "Titulo": "Libro 94"
+  },
+  {
+    "ISBN": "ISBN-00095",
+    "Anio": 1922,
+    "Autor": "Autor A",
+    "Editorial": "Editorial 4",
+    "Existencias": 25,
+    "Genero": "Hist\u00f3rico",
+    "Precio": 20.44,
+    "Titulo": "Libro 95"
+  },
+  {
+    "ISBN": "ISBN-00096",
+    "Anio": 1913,
+    "Autor": "Autor D",
+    "Editorial": "Editorial 4",
+    "Existencias": 82,
+    "Genero": "Fantas\u00eda",
+    "Precio": 17.69,
+    "Titulo": "Libro 96"
+  },
+  {
+    "ISBN": "ISBN-00097",
+    "Anio": 1983,
+    "Autor": "Autor D",
+    "Editorial": "Editorial 4",
+    "Existencias": 59,
+    "Genero": "Terror",
+    "Precio": 77.01,
+    "Titulo": "Libro 97"
+  },
+  {
+    "ISBN": "ISBN-00098",
+    "Anio": 2000,
+    "Autor": "Autor A",
+    "Editorial": "Editorial 4",
+    "Existencias": 35,
+    "Genero": "Ficci\u00f3n",
+    "Precio": 51.35,
+    "Titulo": "Libro 98"
+  },
+  {
+    "ISBN": "ISBN-00099",
+    "Anio": 1973,
+    "Autor": "Autor B",
+    "Editorial": "Editorial 2",
+    "Existencias": 92,
+    "Genero": "Biograf\u00eda",
+    "Precio": 49.43,
+    "Titulo": "Libro 99"
   }
- ]
+]

@@ -25,9 +25,9 @@ public class AWS_DDB_Login {
 		AwsSessionCredentials credentials = AwsSessionCredentials.create(accessKey, secretKey, sessionToken);
 		LOGGER.info("Credenciales cargadas correctamente");
 		// Imprime las credenciales personalizadas
-		LOGGER.info("Access Key: " + credentials.accessKeyId());
-		LOGGER.info("Secret Key: " + credentials.secretAccessKey());
-		LOGGER.info("Session Token: " + credentials.sessionToken());
+		LOGGER.trace("Access Key: " + credentials.accessKeyId());
+		LOGGER.trace("Secret Key: " + credentials.secretAccessKey());
+		LOGGER.trace("Session Token: " + credentials.sessionToken());
 
 		// Configura el cliente de DynamoDB
 		Region region = Region.US_EAST_1;
