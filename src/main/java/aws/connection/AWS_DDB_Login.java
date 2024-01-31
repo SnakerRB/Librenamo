@@ -1,5 +1,8 @@
 package aws.connection;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import software.amazon.awssdk.auth.credentials.AwsSessionCredentials;
 import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
 import software.amazon.awssdk.regions.Region;
@@ -7,7 +10,7 @@ import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 
 public class AWS_DDB_Login {
 
-
+	private static final Logger LOGGER = LoggerFactory.getLogger(AWS_DDB_Login.class);
 	public static DynamoDbClient Logg() {
 		
 		// Cargamos propiedades
@@ -17,14 +20,14 @@ public class AWS_DDB_Login {
 		String accessKey = config.getAccessKey();
 		String secretKey = config.getSecretKey();
 		String sessionToken = config.getSessionToken();
-
+		
 		// Crea las credenciales incluyendo el token de sesión
 		AwsSessionCredentials credentials = AwsSessionCredentials.create(accessKey, secretKey, sessionToken);
-
+		LOGGER.info("Credenciales cargadas correctamente");
 		// Imprime las credenciales personalizadas
-		System.out.println("Access Key: " + credentials.accessKeyId());
-		System.out.println("Secret Key: " + credentials.secretAccessKey());
-		System.out.println("Session Token: " + credentials.sessionToken());
+		LOGGER.info("Access Key: " + credentials.accessKeyId());
+		LOGGER.info("Secret Key: " + credentials.secretAccessKey());
+		LOGGER.info("Session Token: " + credentials.sessionToken());
 
 		// Configura el cliente de DynamoDB
 		Region region = Region.US_EAST_1;

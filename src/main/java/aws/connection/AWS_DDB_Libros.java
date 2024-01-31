@@ -5,7 +5,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ArrayList;
-import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,9 +32,9 @@ public class AWS_DDB_Libros {
 			Map<String, AttributeValue> item = Map.of("ISBN", libro.getISBN(), "Anio", libro.getAnio(), "Autor",
 					libro.getAutor(), "Editorial", libro.getEditorial(), "Existencias", libro.getExistencias(),
 					"Genero", libro.getGenero(), "Precio", libro.getPrecio(), "Titulo", libro.getTitulo());
-
+			
 			PutItemRequest putItemRequest = PutItemRequest.builder().tableName("Libros").item(item).build();
-
+			LOGGER.info("Map y ItemRequest realizado correctamente");
 			// Inserta el libro en la tabla DynamoDB
 			dynamoDbClient.putItem(putItemRequest);
 			LOGGER.info("Libro insertado: " + libro.getISBN().s());
@@ -44,13 +43,14 @@ public class AWS_DDB_Libros {
 			LOGGER.error("Error al insertar el libro: " + e.getMessage());
 		} finally {
 			dynamoDbClient.close();
+			LOGGER.info("Cliente DB Cerrado correctamente");
 		}
 	}
 
 	public static void Delete(DynamoDbClient dynamoDbClient, String isbn) {
 		HashMap<String, AttributeValue> keyToDelete = new HashMap<>();
 		keyToDelete.put("ISBN", AttributeValue.builder().s(isbn).build());
-
+		LOGGER.info("HashMap y Clave generados correctemente");
 		DeleteItemRequest deleteItemRequest = DeleteItemRequest.builder().tableName("Libros").key(keyToDelete).build();
 
 		try {
@@ -60,6 +60,7 @@ public class AWS_DDB_Libros {
 			LOGGER.error("Error al eliminar el libro: " + e.getMessage());
 		} finally {
 			dynamoDbClient.close();
+			LOGGER.info("Cliente DB Cerrado correctamente");
 		}
 	}
 
@@ -67,7 +68,7 @@ public class AWS_DDB_Libros {
 		// Primero, obtenemos el objeto que deseamos editar
 		HashMap<String, AttributeValue> keyToGet = new HashMap<>();
 		keyToGet.put("ISBN", AttributeValue.builder().s(isbn).build());
-
+		LOGGER.info("HashMap y Clave generados correctemente");
 		GetItemRequest getItemRequest = GetItemRequest.builder().tableName("Libros").key(keyToGet).build();
 
 		Map<String, AttributeValue> item = dynamoDbClient.getItem(getItemRequest).item();
@@ -94,6 +95,7 @@ public class AWS_DDB_Libros {
 				LOGGER.error("Error al actualizar el objeto: " + e.getMessage());
 			} finally {
 				dynamoDbClient.close();
+				LOGGER.info("Cliente DB Cerrado correctamente");
 			}
 		}
 	}
@@ -101,7 +103,6 @@ public class AWS_DDB_Libros {
 	public static ArrayList<Libro> ImportFromJson(DynamoDbClient dynamoDbClient, String jsonFilePath) {
 		ObjectMapper objectMapper = new ObjectMapper();
 		ArrayList<Libro> libros = new ArrayList<>();
-
         try {
             // Lee el JSON desde el archivo
             JsonNode jsonArray = objectMapper.readTree(new File(jsonFilePath));
@@ -127,6 +128,7 @@ public class AWS_DDB_Libros {
                         libro.setPrecio(jsonNode.get("Precio").asText());
 
                         libros.add(libro);
+                        LOGGER.info("Libro añadido correctamente");
                     } else {
                         System.err.println("Error: Uno o más objetos en el JSON no contienen todas las propiedades necesarias.");
                     }
