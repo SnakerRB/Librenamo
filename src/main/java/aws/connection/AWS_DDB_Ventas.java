@@ -1,6 +1,8 @@
 package aws.connection;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -200,4 +202,55 @@ public class AWS_DDB_Ventas {
 
 		return null;
 	}
+
+	public static ArrayList<Venta> getAllVentas(DynamoDbClient dynamoDbClient) {
+		ArrayList<Venta> ventas = new ArrayList<>();
+
+		ScanResponse response;
+		Map<String, AttributeValue> lastEvaluatedKey = null;
+		int count = 0;
+		do {
+			ScanRequest scanRequest = ScanRequest.builder().tableName("Ventas").exclusiveStartKey(lastEvaluatedKey)
+					.build();
+
+			response = dynamoDbClient.scan(scanRequest);
+
+			List<Map<String, AttributeValue>> items = response.items();
+			for (Map<String, AttributeValue> item : items) {
+				Venta venta = new Venta();
+				count++;
+				if (item.containsKey("VentaID")) {
+					venta.setVentaID(item.get("VentaID").s());
+				}
+				if (item.containsKey("FechaVenta")) {
+					venta.setFechaVenta(item.get("FechaVenta").s());
+				}
+				if (item.containsKey("Direccion")) {
+					venta.setDireccion(item.get("Direccion").s());
+				}
+				if (item.containsKey("EmpleadoID")) {
+					venta.setEmpleadoID(item.get("EmpleadoID").s());
+				}
+				if (item.containsKey("ListaLibrosVendidos")) {
+					Map<String, AttributeValue> listaLibrosVendidosMap = item.get("ListaLibrosVendidos").m();
+					// Asume que ListaLibrosVendidos contiene "Cantidad" y "ISBN"
+					String cantidad = listaLibrosVendidosMap.get("Cantidad").s();
+					String isbn = listaLibrosVendidosMap.get("ISBN").s();
+					// Asume que tienes un método para ajustar estos valores
+					venta.setListaLibrosVendidos(cantidad, isbn);
+				}
+				if (item.containsKey("TotalVenta")) {
+					venta.setTotalVenta(item.get("TotalVenta").s());
+				}
+
+				ventas.add(venta);
+			}
+
+			lastEvaluatedKey = response.lastEvaluatedKey();
+
+		} while (lastEvaluatedKey != null && !lastEvaluatedKey.isEmpty());
+		LOGGER.info("Se han recuperado " + count + " registros de Ventas en la BBDD");
+		return ventas;
+	}
+
 }

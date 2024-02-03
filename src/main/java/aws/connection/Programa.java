@@ -5,8 +5,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 /**
- * Esta clase representa el programa principal que permite interactuar con una base de datos DynamoDB
- * para gestionar registros de libros, ventas y empleados.
+ * Esta clase representa el programa principal que permite interactuar con una
+ * base de datos DynamoDB para gestionar registros de libros, ventas y
+ * empleados.
  */
 public class Programa {
 	public static void main(String[] args) {
@@ -51,7 +52,8 @@ public class Programa {
 
 						} else if (subopcionImportar == 2) {
 
-							// Implementa la lógica para importar datos de ventas desde JSON
+							String jsonFileVentas = "src/main/resources/ventas.json";
+							JsonHandler.ImportarVentas(jsonFileVentas);
 
 						} else if (subopcionImportar == 3) {
 
@@ -83,7 +85,8 @@ public class Programa {
 
 						} else if (subopcionExportar == 2) {
 
-							// Implementa la lógica para exportar datos de ventas desde JSON
+							String OutFilePathVentas = "src/main/resources/ventasOut.json";
+							JsonHandler.ExportarVentas(OutFilePathVentas);
 
 						} else if (subopcionExportar == 3) {
 
