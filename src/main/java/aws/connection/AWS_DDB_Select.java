@@ -14,11 +14,23 @@ import software.amazon.awssdk.services.dynamodb.model.GetItemResponse;
 import software.amazon.awssdk.services.dynamodb.model.ScanRequest;
 import software.amazon.awssdk.services.dynamodb.model.ScanResponse;
 
+/**
+ * Esta clase proporciona métodos para realizar consultas SELECT en tablas
+ * DynamoDB.
+ */
 public class AWS_DDB_Select {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(AWS_DDB_Select.class);
 
-	// -------------------- SELECT * FROM table --------------------
+	/**
+	 * Realiza una consulta SELECT * en la tabla especificada y muestra todos los
+	 * registros.
+	 *
+	 * @param dynamoDbClient El cliente DynamoDB utilizado para realizar la
+	 *                       operación.
+	 * @param tableName      El nombre de la tabla en la que se realizará la
+	 *                       consulta.
+	 */
 	public static void SelectAll(DynamoDbClient dynamoDbClient, String tableName) {
 
 		ScanRequest scanRequest = ScanRequest.builder().tableName(tableName).build();
@@ -41,6 +53,10 @@ public class AWS_DDB_Select {
 		}
 	}
 
+	/**
+	 * Esta clase contiene métodos auxiliares para imprimir campos y mapas de
+	 * atributos.
+	 */
 	private static void imprimirCampos(Map<String, AttributeValue> item) {
 		StringBuilder builder = new StringBuilder();
 
@@ -63,6 +79,13 @@ public class AWS_DDB_Select {
 		LOGGER.info(builder.toString());
 	}
 
+	/**
+	 * Este método convierte un mapa de atributos en una representación de cadena
+	 * para su impresión.
+	 *
+	 * @param mapa El mapa de atributos que se va a imprimir.
+	 * @return Una cadena que representa el mapa de atributos.
+	 */
 	private static String imprimirMapa(Map<String, AttributeValue> mapa) {
 		StringBuilder builder = new StringBuilder();
 		builder.append("{ ");
@@ -83,7 +106,17 @@ public class AWS_DDB_Select {
 		return builder.toString();
 	}
 
-	// -------------------- SELECT * FROM table WHERE pk --------------------
+	/**
+	 * Realiza una consulta SELECT en la tabla especificada utilizando la clave de
+	 * partición proporcionada y, opcionalmente, la clave de rango.
+	 *
+	 * @param dynamoDbClient El cliente DynamoDB utilizado para realizar la
+	 *                       operación.
+	 * @param tableName      El nombre de la tabla en la que se realizará la
+	 *                       consulta.
+	 * @param partitionKey   La clave de partición utilizada en la consulta.
+	 * @param sortKey        La clave de rango utilizada en la consulta (opcional).
+	 */
 	public static void buscarItem(DynamoDbClient dynamoDbClient, String tableName, String partitionKey,
 			String sortKey) {
 		String partitionKeyName;

@@ -5,10 +5,12 @@ import software.amazon.awssdk.services.dynamodb.model.AttributeValue;
 import software.amazon.awssdk.services.dynamodb.model.DeleteItemRequest;
 import software.amazon.awssdk.services.dynamodb.model.DynamoDbException;
 import software.amazon.awssdk.services.dynamodb.model.GetItemRequest;
+import software.amazon.awssdk.services.dynamodb.model.GetItemResponse;
 import software.amazon.awssdk.services.dynamodb.model.PutItemRequest;
 import software.amazon.awssdk.services.dynamodb.model.ReturnValue;
 import software.amazon.awssdk.services.dynamodb.model.ScanRequest;
 import software.amazon.awssdk.services.dynamodb.model.ScanResponse;
+import software.amazon.awssdk.services.dynamodb.model.Select;
 import software.amazon.awssdk.services.dynamodb.model.UpdateItemRequest;
 import software.amazon.awssdk.services.dynamodb.model.UpdateItemResponse;
 
@@ -20,10 +22,23 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Esta clase proporciona métodos para interactuar con una tabla DynamoDB
+ * llamada "Empleados". Los métodos incluyen la creación, eliminación, edición y
+ * recuperación de registros de empleados.
+ */
 public class AWS_DDB_Empleados {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(AWS_DDB_Empleados.class);
 
+	/**
+	 * Este método crea un nuevo registro de empleado en la tabla DynamoDB
+	 * "Empleados".
+	 *
+	 * @param dynamoDbClient El cliente DynamoDB utilizado para realizar la
+	 *                       operación.
+	 * @param empleado       El objeto Empleado que se va a insertar en la tabla.
+	 */
 	public static void Create(DynamoDbClient dynamoDbClient, Empleado empleado) {
 		try {
 			// Crea un mapa de atributos para el empleado
@@ -44,6 +59,14 @@ public class AWS_DDB_Empleados {
 		}
 	}
 
+	/**
+	 * Este método elimina un registro de empleado en la tabla DynamoDB "Empleados"
+	 * por su clave de partición (EmpleadoID).
+	 *
+	 * @param dynamoDbClient El cliente DynamoDB utilizado para realizar la
+	 *                       operación.
+	 * @param empleadoID     El ID del empleado que se va a eliminar.
+	 */
 	public static void Delete(DynamoDbClient dynamoDbClient, String empleadoID) {
 		HashMap<String, AttributeValue> keyToDelete = new HashMap<>();
 		keyToDelete.put("EmpleadoID", AttributeValue.builder().s(empleadoID).build());
@@ -62,6 +85,16 @@ public class AWS_DDB_Empleados {
 		}
 	}
 
+	/**
+	 * Este método edita un atributo específico de un registro de empleado en la
+	 * tabla DynamoDB "Empleados".
+	 *
+	 * @param dynamoDbClient El cliente DynamoDB utilizado para realizar la
+	 *                       operación.
+	 * @param empleadoID     El ID del empleado cuyo atributo se va a editar.
+	 * @param campo          El nombre del atributo que se va a editar.
+	 * @param valor          El nuevo valor para el atributo.
+	 */
 	public static void Edit(DynamoDbClient dynamoDbClient, String empleadoID, String campo, String valor) {
 		// Primero, obtenemos el objeto que deseamos editar
 		HashMap<String, AttributeValue> keyToGet = new HashMap<>();
@@ -98,8 +131,15 @@ public class AWS_DDB_Empleados {
 		}
 	}
 
-	// metodo para recuperar los datos de los empleados de la bbdd y insertarlos en
-	// un array de objetos empleado
+	/**
+	 * Este método recupera todos los registros de empleados de la tabla DynamoDB
+	 * "Empleados" y los devuelve en forma de una lista de objetos Empleado.
+	 *
+	 * @param dynamoDbClient El cliente DynamoDB utilizado para realizar la
+	 *                       operación.
+	 * @return Una lista de objetos Empleado que representan los registros de
+	 *         empleados en la tabla.
+	 */
 	public static ArrayList<Empleado> getAllEmpleados(DynamoDbClient dynamoDbClient) {
 		ArrayList<Empleado> empleados = new ArrayList<>();
 
@@ -150,6 +190,68 @@ public class AWS_DDB_Empleados {
 
 		LOGGER.info("Se han recuperado " + count + " registros de Empleados en la BBDD");
 		return empleados;
+	}
 
+	/**
+	 * Incrementa el valor del ID de empleado en función del valor máximo actual
+	 * encontrado en la tabla DynamoDB.
+	 *
+	 * @param dynamoDbClient El cliente DynamoDB utilizado para realizar la
+	 *                       operación.
+	 * @return El nuevo ID de empleado incrementado.
+	 */
+	public static String IncrementoEmpleadoID(DynamoDbClient dynamoDbClient) {
+
+		ScanRequest scanRequest = ScanRequest.builder().tableName("Empleados").select(Select.ALL_ATTRIBUTES).build();
+
+		ScanResponse scanResponse = dynamoDbClient.scan(scanRequest);
+
+		String ultimoID = "";
+		for (Map<String, AttributeValue> item : scanResponse.items()) {
+			AttributeValue id = item.get("EmpleadoID");
+			if (id != null && id.s() != null) {
+				String idString = id.s();
+				if (idString.compareTo(ultimoID) > 0) {
+					ultimoID = idString;
+				}
+			}
+		}
+
+		if (ultimoID.matches("EMP_\\d{4}")) {
+
+			String parteNumerica = ultimoID.substring(4);
+			int numero = Integer.parseInt(parteNumerica);
+			numero++;
+			String nuevoNumero = String.format("%04d", numero);
+			return "EMP_" + nuevoNumero;
+		} else {
+			return ultimoID;
+		}
+	}
+
+	/**
+	 * Verifica si existe un empleado con el EmpleadoID proporcionado en la tabla
+	 * DynamoDB "Empleados".
+	 *
+	 * @param dynamoDbClient El cliente DynamoDB utilizado para realizar la
+	 *                       operación.
+	 * @param empleadoID     El ID del empleado que se va a verificar.
+	 * @return true si el empleado existe, false en caso contrario.
+	 */
+	public static boolean existeEmpleado(DynamoDbClient dynamoDbClient, String empleadoID) {
+		try {
+			GetItemRequest getItemRequest = GetItemRequest.builder().tableName("Empleados")
+					.key(Map.of("EmpleadoID", AttributeValue.builder().s(empleadoID).build()))
+					.projectionExpression("EmpleadoID").build();
+
+			GetItemResponse getItemResponse = dynamoDbClient.getItem(getItemRequest);
+
+			// Si getItemResponse no es nulo y contiene el atributo "EmpleadoID", entonces
+			// el empleado existe
+			return getItemResponse.hasItem() && getItemResponse.item().containsKey("EmpleadoID");
+		} catch (DynamoDbException e) {
+			System.err.println("Error al buscar el empleado: " + e.getMessage());
+			return false;
+		}
 	}
 }

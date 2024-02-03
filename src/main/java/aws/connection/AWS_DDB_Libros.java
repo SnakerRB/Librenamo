@@ -1,7 +1,5 @@
 package aws.connection;
 
-import java.io.IOException;
-import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,9 +7,6 @@ import java.util.ArrayList;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import software.amazon.awssdk.services.dynamodb.DynamoDbClient;
 import software.amazon.awssdk.services.dynamodb.model.AttributeValue;
@@ -25,10 +20,22 @@ import software.amazon.awssdk.services.dynamodb.model.ScanResponse;
 import software.amazon.awssdk.services.dynamodb.model.UpdateItemRequest;
 import software.amazon.awssdk.services.dynamodb.model.UpdateItemResponse;
 
+/**
+ * Esta clase proporciona métodos para interactuar con una tabla DynamoDB
+ * llamada "Libros". Los métodos incluyen la creación, eliminación, edición y
+ * recuperación de registros de libros.
+ */
 public class AWS_DDB_Libros {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(AWS_DDB_Libros.class);
 
+	/**
+	 * Este método crea un nuevo registro de libro en la tabla DynamoDB "Libros".
+	 *
+	 * @param dynamoDbClient El cliente DynamoDB utilizado para realizar la
+	 *                       operación.
+	 * @param libro          El objeto Libro que se va a insertar en la tabla.
+	 */
 	public static void Create(DynamoDbClient dynamoDbClient, Libro libro) {
 		try {
 			// Crea un mapa de atributos para el libro
@@ -50,6 +57,14 @@ public class AWS_DDB_Libros {
 		}
 	}
 
+	/**
+	 * Este método elimina un registro de libro en la tabla DynamoDB "Libros" por su
+	 * clave de partición (ISBN).
+	 *
+	 * @param dynamoDbClient El cliente DynamoDB utilizado para realizar la
+	 *                       operación.
+	 * @param isbn           El ISBN del libro que se va a eliminar.
+	 */
 	public static void Delete(DynamoDbClient dynamoDbClient, String isbn) {
 		HashMap<String, AttributeValue> keyToDelete = new HashMap<>();
 		keyToDelete.put("ISBN", AttributeValue.builder().s(isbn).build());
@@ -67,6 +82,16 @@ public class AWS_DDB_Libros {
 		}
 	}
 
+	/**
+	 * Este método edita un atributo específico de un registro de libro en la tabla
+	 * DynamoDB "Libros".
+	 *
+	 * @param dynamoDbClient El cliente DynamoDB utilizado para realizar la
+	 *                       operación.
+	 * @param isbn           El ISBN del libro cuyo atributo se va a editar.
+	 * @param campo          El nombre del atributo que se va a editar.
+	 * @param valor          El nuevo valor para el atributo.
+	 */
 	public static void Edit(DynamoDbClient dynamoDbClient, String isbn, String campo, String valor) {
 		// Primero, obtenemos el objeto que deseamos editar
 		HashMap<String, AttributeValue> keyToGet = new HashMap<>();
@@ -103,6 +128,15 @@ public class AWS_DDB_Libros {
 		}
 	}
 
+	/**
+	 * Este método recupera todos los registros de libros de la tabla DynamoDB
+	 * "Libros" y los devuelve en forma de una lista de objetos Libro.
+	 *
+	 * @param dynamoDbClient El cliente DynamoDB utilizado para realizar la
+	 *                       operación.
+	 * @return Una lista de objetos Libro que representan los registros de libros en
+	 *         la tabla.
+	 */
 	public static ArrayList<Libro> getAllLibros(DynamoDbClient dynamoDbClient) {
 		ArrayList<Libro> libros = new ArrayList<>();
 

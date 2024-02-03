@@ -1,0 +1,222 @@
+[
+  {
+    "VentaID": "VEN_0000",
+    "FechaVenta": "15/02/2022",
+    "Direccion": "Store 2",
+    "EmpleadoID": "EMP_0009",
+    "ListaLibrosVendidos": {
+      "Cantidad": 4,
+      "ISBN": "ISBN-00000"
+    },
+    "TotalVenta": 385.12
+  },
+  {
+    "VentaID": "VEN_0001",
+    "FechaVenta": "04/03/2020",
+    "Direccion": "Store 3",
+    "EmpleadoID": "EMP_0014",
+    "ListaLibrosVendidos": {
+      "Cantidad": 4,
+      "ISBN": "ISBN-00001"
+    },
+    "TotalVenta": 187.37
+  },
+  {
+    "VentaID": "VEN_0002",
+    "FechaVenta": "15/11/2024",
+    "Direccion": "Store 3",
+    "EmpleadoID": "EMP_0020",
+    "ListaLibrosVendidos": {
+      "Cantidad": 7,
+      "ISBN": "ISBN-00005"
+    },
+    "TotalVenta": 567.92
+  },
+  {
+    "VentaID": "VEN_0003",
+    "FechaVenta": "11/08/2023",
+    "Direccion": "Store 3",
+    "EmpleadoID": "EMP_0015",
+    "ListaLibrosVendidos": {
+      "Cantidad": 10,
+      "ISBN": "ISBN-00005"
+    },
+    "TotalVenta": 669.55
+  },
+  {
+    "VentaID": "VEN_0004",
+    "FechaVenta": "08/03/2020",
+    "Direccion": "Store 5",
+    "EmpleadoID": "EMP_0014",
+    "ListaLibrosVendidos": {
+      "Cantidad": 8,
+      "ISBN": "ISBN-00001"
+    },
+    "TotalVenta": 453.42
+  },
+  {
+    "VentaID": "VEN_0005",
+    "FechaVenta": "16/02/2020",
+    "Direccion": "Store 1",
+    "EmpleadoID": "EMP_0016",
+    "ListaLibrosVendidos": {
+      "Cantidad": 4,
+      "ISBN": "ISBN-00002"
+    },
+    "TotalVenta": 424.39
+  },
+  {
+    "VentaID": "VEN_0006",
+    "FechaVenta": "11/09/2020",
+    "Direccion": "Store 3",
+    "EmpleadoID": "EMP_0014",
+    "ListaLibrosVendidos": {
+      "Cantidad": 10,
+      "ISBN": "ISBN-00000"
+    },
+    "TotalVenta": 831.81
+  },
+  {
+    "VentaID": "VEN_0007",
+    "FechaVenta": "20/09/2023",
+    "Direccion": "Store 5",
+    "EmpleadoID": "EMP_0013",
+    "ListaLibrosVendidos": {
+      "Cantidad": 1,
+      "ISBN": "ISBN-00005"
+    },
+    "TotalVenta": 189.2
+  },
+  {
+    "VentaID": "VEN_0008",
+    "FechaVenta": "22/09/2021",
+    "Direccion": "Store 4",
+    "EmpleadoID": "EMP_0001",
+    "ListaLibrosVendidos": {
+      "Cantidad": 4,
+      "ISBN": "ISBN-00005"
+    },
+    "TotalVenta": 342.03
+  },
+  {
+    "VentaID": "VEN_0009",
+    "FechaVenta": "02/08/2024",
+    "Direccion": "Store 3",
+    "EmpleadoID": "EMP_0004",
+    "ListaLibrosVendidos": {
+      "Cantidad": 8,
+      "ISBN": "ISBN-00002"
+    },
+    "TotalVenta": 904.19
+  },
+  {
+    "VentaID": "VEN_0010",
+    "FechaVenta": "19/08/2022",
+    "Direccion": "Store 3",
+    "EmpleadoID": "EMP_0007",
+    "ListaLibrosVendidos": {
+      "Cantidad": 9,
+      "ISBN": "ISBN-00001"
+    },
+    "TotalVenta": 680.47
+  },
+  {
+    "VentaID": "VEN_0011",
+    "FechaVenta": "25/10/2022",
+    "Direccion": "Store 1",
+    "EmpleadoID": "EMP_0016",
+    "ListaLibrosVendidos": {
+      "Cantidad": 9,
+      "ISBN": "ISBN-00000"
+    },
+    "TotalVenta": 259.34
+  },
+  {
+    "VentaID": "VEN_0012",
+    "FechaVenta": "26/10/2020",
+    "Direccion": "Store 3",
+    "EmpleadoID": "EMP_0013",
+    "ListaLibrosVendidos": {
+      "Cantidad": 6,
+      "ISBN": "ISBN-00001"
+    },
+    "TotalVenta": 509.45
+  },
+  {
+    "VentaID": "VEN_0013",
+    "FechaVenta": "16/10/2024",
+    "Direccion": "Store 5",
+    "EmpleadoID": "EMP_0004",
+    "ListaLibrosVendidos": {
+      "Cantidad": 2,
+      "ISBN": "ISBN-00005"
+    },
+    "TotalVenta": 979.38
+  },
+  {
+    "VentaID": "VEN_0014",
+    "FechaVenta": "11/02/2021",
+    "Direccion": "Store 2",
+    "EmpleadoID": "EMP_0010",
+    "ListaLibrosVendidos": {
+      "Cantidad": 7,
+      "ISBN": "ISBN-00001"
+    },
+    "TotalVenta": 237.64
+  },
+  {
+    "VentaID": "VEN_0015",
+    "FechaVenta": "06/09/2021",
+    "Direccion": "Store 5",
+    "EmpleadoID": "EMP_0002",
+    "ListaLibrosVendidos": {
+      "Cantidad": 5,
+      "ISBN": "ISBN-00002"
+    },
+    "TotalVenta": 850.83
+  },
+  {
+    "VentaID": "VEN_0016",
+    "FechaVenta": "06/01/2024",
+    "Direccion": "Store 3",
+    "EmpleadoID": "EMP_0007",
+    "ListaLibrosVendidos": {
+      "Cantidad": 7,
+      "ISBN": "ISBN-00002"
+    },
+    "TotalVenta": 890.11
+  },
+  {
+    "VentaID": "VEN_0017",
+    "FechaVenta": "28/05/2022",
+    "Direccion": "Store 2",
+    "EmpleadoID": "EMP_0011",
+    "ListaLibrosVendidos": {
+      "Cantidad": 7,
+      "ISBN": "ISBN-00002"
+    },
+    "TotalVenta": 570.42
+  },
+  {
+    "VentaID": "VEN_0018",
+    "FechaVenta": "28/09/2022",
+    "Direccion": "Store 2",
+    "EmpleadoID": "EMP_0013",
+    "ListaLibrosVendidos": {
+      "Cantidad": 7,
+      "ISBN": "ISBN-00002"
+    },
+    "TotalVenta": 521.72
+  },
+  {
+    "VentaID": "VEN_0019",
+    "FechaVenta": "23/11/2021",
+    "Direccion": "Store 2",
+    "EmpleadoID": "EMP_0008",
+    "ListaLibrosVendidos": {
+      "Cantidad": 8,
+      "ISBN": "ISBN-00005"
+    },
+    "TotalVenta": 166.97
+  }
+]

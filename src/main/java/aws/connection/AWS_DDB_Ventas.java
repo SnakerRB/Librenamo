@@ -11,15 +11,31 @@ import software.amazon.awssdk.services.dynamodb.model.AttributeValue;
 import software.amazon.awssdk.services.dynamodb.model.DeleteItemRequest;
 import software.amazon.awssdk.services.dynamodb.model.DynamoDbException;
 import software.amazon.awssdk.services.dynamodb.model.GetItemRequest;
+import software.amazon.awssdk.services.dynamodb.model.GetItemResponse;
 import software.amazon.awssdk.services.dynamodb.model.PutItemRequest;
 import software.amazon.awssdk.services.dynamodb.model.ReturnValue;
+import software.amazon.awssdk.services.dynamodb.model.ScanRequest;
+import software.amazon.awssdk.services.dynamodb.model.ScanResponse;
+import software.amazon.awssdk.services.dynamodb.model.Select;
 import software.amazon.awssdk.services.dynamodb.model.UpdateItemRequest;
 import software.amazon.awssdk.services.dynamodb.model.UpdateItemResponse;
 
+/**
+ * Esta clase proporciona métodos para interactuar con una tabla DynamoDB
+ * llamada "Ventas". Los métodos incluyen la creación, eliminación, edición y
+ * recuperación de registros de ventas.
+ */
 public class AWS_DDB_Ventas {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(AWS_DDB_Ventas.class);
 
+	/**
+	 * Este método crea un nuevo registro de venta en la tabla DynamoDB "Ventas".
+	 *
+	 * @param dynamoDbClient El cliente DynamoDB utilizado para realizar la
+	 *                       operación.
+	 * @param venta          El objeto Venta que se va a insertar en la tabla.
+	 */
 	public static void Create(DynamoDbClient dynamoDbClient, Venta venta) {
 		try {
 			// Crea un mapa de atributos para la venta
@@ -45,6 +61,15 @@ public class AWS_DDB_Ventas {
 		}
 	}
 
+	/**
+	 * Este método elimina un registro de venta en la tabla DynamoDB "Ventas" por su
+	 * clave de partición (VentaID) y su clave de ordenación (FechaVenta).
+	 *
+	 * @param dynamoDbClient El cliente DynamoDB utilizado para realizar la
+	 *                       operación.
+	 * @param ventaID        El ID de la venta que se va a eliminar.
+	 * @param FechaVenta     La fecha de la venta que se va a eliminar.
+	 */
 	public static void Delete(DynamoDbClient dynamoDbClient, String ventaID, String FechaVenta) {
 		HashMap<String, AttributeValue> keyToDelete = new HashMap<>();
 		keyToDelete.put("VentaID", AttributeValue.builder().s(ventaID).build());
@@ -62,6 +87,17 @@ public class AWS_DDB_Ventas {
 		}
 	}
 
+	/**
+	 * Este método edita un atributo específico de un registro de venta en la tabla
+	 * DynamoDB "Ventas".
+	 *
+	 * @param dynamoDbClient El cliente DynamoDB utilizado para realizar la
+	 *                       operación.
+	 * @param ventaID        El ID de la venta cuyo atributo se va a editar.
+	 * @param campo          El nombre del atributo que se va a editar.
+	 * @param valor          El nuevo valor para el atributo.
+	 * @param FechaVenta     La fecha de la venta cuyo atributo se va a editar.
+	 */
 	public static void Edit(DynamoDbClient dynamoDbClient, String ventaID, String campo, String valor,
 			String FechaVenta) {
 		// Primero, obtenemos el objeto que deseamos editar
@@ -97,5 +133,71 @@ public class AWS_DDB_Ventas {
 				LOGGER.info("Cliente DB Cerrado correctamente");
 			}
 		}
+	}
+
+	/**
+	 * Este método genera un nuevo ID de venta incrementando el último ID encontrado
+	 * en la tabla DynamoDB "Ventas".
+	 *
+	 * @param dynamoDbClient El cliente DynamoDB utilizado para realizar la
+	 *                       operación.
+	 * @return Un nuevo ID de venta generado.
+	 */
+	public static String IncrementoVentaID(DynamoDbClient dynamoDbClient) {
+
+		ScanRequest scanRequest = ScanRequest.builder().tableName("Ventas").select(Select.ALL_ATTRIBUTES).build();
+
+		ScanResponse scanResponse = dynamoDbClient.scan(scanRequest);
+
+		String ultimoID = "";
+		for (Map<String, AttributeValue> item : scanResponse.items()) {
+			AttributeValue id = item.get("VentaID");
+			if (id != null && id.s() != null) {
+				String idString = id.s();
+				if (idString.compareTo(ultimoID) > 0) {
+					ultimoID = idString;
+				}
+			}
+		}
+
+		if (ultimoID.matches("VEN_\\d{4}")) {
+
+			String parteNumerica = ultimoID.substring(4);
+			int numero = Integer.parseInt(parteNumerica);
+			numero++;
+			String nuevoNumero = String.format("%04d", numero);
+			return "VEN_" + nuevoNumero;
+		} else {
+			return ultimoID;
+		}
+	}
+
+	/**
+	 * Este método obtiene el precio de un libro por su ISBN consultando la tabla
+	 * DynamoDB "Libros".
+	 *
+	 * @param dynamoDbClient El cliente DynamoDB utilizado para realizar la
+	 *                       operación.
+	 * @param isbn           El ISBN del libro del que se desea obtener el precio.
+	 * @return El precio del libro como una cadena de texto, o null si no se
+	 *         encontró el libro.
+	 */
+	public static String obtenerPrecioPorISBN(DynamoDbClient dynamoDbClient, String isbn) {
+		GetItemRequest getItemRequest = GetItemRequest.builder().tableName("Libros")
+				.key(Map.of("ISBN", AttributeValue.builder().s(isbn).build())).projectionExpression("Precio").build();
+
+		try {
+			GetItemResponse getItemResponse = dynamoDbClient.getItem(getItemRequest);
+			Map<String, AttributeValue> item = getItemResponse.item();
+
+			if (item != null && item.containsKey("Precio")) {
+				AttributeValue precioAttributeValue = item.get("Precio");
+				return precioAttributeValue.n();
+			}
+		} catch (DynamoDbException e) {
+			System.err.println("Error al obtener el precio por ISBN: " + e.getMessage());
+		}
+
+		return null;
 	}
 }
