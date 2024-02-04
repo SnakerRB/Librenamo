@@ -219,10 +219,9 @@ public class JsonHandler {
 			jsonNode.put("Direccion", venta.getDireccion().s());
 			jsonNode.put("EmpleadoID", venta.getEmpleadoID().s());
 
-			// Asumiendo que getListaLibrosVendidos devuelve un Map<String, Object>
 			Map<String, AttributeValue> listaLibrosVendidos = venta.getListaLibrosVendidos();
 			ObjectNode librosVendidosNode = jsonNode.putObject("ListaLibrosVendidos");
-			librosVendidosNode.put("Cantidad", listaLibrosVendidos.get("Cantidad").s());
+			librosVendidosNode.put("Cantidad", listaLibrosVendidos.get("Cantidad").n());
 			librosVendidosNode.put("ISBN", listaLibrosVendidos.get("ISBN").s());
 
 			jsonNode.put("TotalVenta", venta.getTotalVenta().s());

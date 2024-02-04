@@ -121,7 +121,7 @@ public class Programa {
 							System.out.println("Autor: ");
 							libro.setAutor(scanner.next());
 							System.out.println("Año: ");
-							libro.setAnio(scanner.next());
+							libro.setAnio(String.valueOf(scanner.nextInt()));
 							System.out.println("Editorial: ");
 							libro.setEditorial(scanner.next());
 							System.out.println("Genero: ");

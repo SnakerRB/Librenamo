@@ -233,8 +233,7 @@ public class AWS_DDB_Ventas {
 				}
 				if (item.containsKey("ListaLibrosVendidos")) {
 					Map<String, AttributeValue> listaLibrosVendidosMap = item.get("ListaLibrosVendidos").m();
-					// Asume que ListaLibrosVendidos contiene "Cantidad" y "ISBN"
-					String cantidad = listaLibrosVendidosMap.get("Cantidad").s();
+					String cantidad = listaLibrosVendidosMap.get("Cantidad").n();
 					String isbn = listaLibrosVendidosMap.get("ISBN").s();
 					// Asume que tienes un método para ajustar estos valores
 					venta.setListaLibrosVendidos(cantidad, isbn);
