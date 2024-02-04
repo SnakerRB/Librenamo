@@ -78,7 +78,7 @@ public class AWS_DDB_Libros {
 			LOGGER.error("Error al eliminar el libro: " + e.getMessage());
 		} finally {
 			dynamoDbClient.close();
-			LOGGER.info("Cliente DB Cerrado correctamente");
+			LOGGER.trace("Cliente DB Cerrado correctamente");
 		}
 	}
 

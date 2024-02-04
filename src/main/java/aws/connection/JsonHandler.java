@@ -16,11 +16,23 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import software.amazon.awssdk.services.dynamodb.model.AttributeValue;
 
+/**
+ * Clase que maneja la importación y exportación de datos entre JSON y DynamoDB.
+ * Esta clase contiene métodos estáticos para convertir datos de y hacia JSON,
+ * permitiendo la manipulación y transferencia de datos entre una representación
+ * en archivo y la base de datos de AWS DynamoDB.
+ */
 public class JsonHandler {
 	private static final Logger LOGGER = LoggerFactory.getLogger(JsonHandler.class);
 
 	// --------------------- IMPORTAR ---------------------
-	// JSON a Empleados
+	/**
+	 * Importa empleados desde un archivo JSON y los almacena en DynamoDB. Lee un
+	 * archivo JSON que contiene datos de empleados, los convierte en objetos
+	 * {@link Empleado}, y luego los almacena en DynamoDB.
+	 * 
+	 * @param jsonFilePath Ruta del archivo JSON a leer.
+	 */
 	public static void ImportarEmpleados(String jsonFilePath) {
 		ObjectMapper objectMapper = new ObjectMapper();
 		try {
@@ -59,7 +71,13 @@ public class JsonHandler {
 		LOGGER.trace("Importación de empleados completada correctamente.");
 	}
 
-	// JSON a Libros
+	/**
+	 * Importa libros desde un archivo JSON y los almacena en DynamoDB. Lee un
+	 * archivo JSON que contiene datos de libros, los convierte en objetos
+	 * {@link Libro}, y luego los almacena en DynamoDB.
+	 * 
+	 * @param jsonFilePath Ruta del archivo JSON a leer.
+	 */
 	public static void ImportarLibros(String jsonFilePath) {
 		ObjectMapper objectMapper = new ObjectMapper();
 		try {
@@ -104,7 +122,13 @@ public class JsonHandler {
 		LOGGER.trace("Importación de Libros completada correctamente.");
 	}
 
-	// JSON a Ventas
+	/**
+	 * Importa ventas desde un archivo JSON y las almacena en DynamoDB. Lee un
+	 * archivo JSON que contiene datos de ventas, los convierte en objetos
+	 * {@link Venta}, y luego los almacena en DynamoDB.
+	 * 
+	 * @param jsonFilePath Ruta del archivo JSON a leer.
+	 */
 	public static void ImportarVentas(String jsonFilePath) {
 		ObjectMapper objectMapper = new ObjectMapper();
 		try {
@@ -147,7 +171,13 @@ public class JsonHandler {
 	}
 
 	// --------------------- EXPORTAR ---------------------
-	// Empleados a JSON
+	/**
+	 * Exporta los datos de empleados de DynamoDB a un archivo JSON. Recupera todos
+	 * los empleados almacenados en DynamoDB y los escribe en un archivo JSON.
+	 * 
+	 * @param OutFilePathEmpleados Ruta del archivo JSON donde se guardarán los
+	 *                             datos exportados.
+	 */
 	public static void ExportarEmpleados(String OutFilePathEmpleados) {
 		ObjectMapper objectMapper = new ObjectMapper();
 		ArrayNode jsonArray = JsonNodeFactory.instance.arrayNode();
@@ -171,11 +201,17 @@ public class JsonHandler {
 			LOGGER.info("Datos de Empleados recuperados en el directorio: " + OutFilePathEmpleados);
 
 		} catch (IOException e) {
-			e.printStackTrace();
+			LOGGER.error("Error con la ruta especificad :" + e);
 		}
 	}
 
-	// Libros a JSON
+	/**
+	 * Exporta los datos de libros de DynamoDB a un archivo JSON. Recupera todos los
+	 * libros almacenados en DynamoDB y los escribe en un archivo JSON.
+	 * 
+	 * @param OutFilePathLibros Ruta del archivo JSON donde se guardarán los datos
+	 *                          exportados.
+	 */
 	public static void ExportarLibros(String OutFilePathLibros) {
 		ObjectMapper objectMapper = new ObjectMapper();
 		ArrayNode jsonArray = objectMapper.createArrayNode();
@@ -201,11 +237,17 @@ public class JsonHandler {
 			LOGGER.info("Datos de Libros recuperados en el directorio: " + OutFilePathLibros);
 
 		} catch (IOException e) {
-			e.printStackTrace();
+			LOGGER.error("Error con la ruta especificad :" + e);
 		}
 	}
 
-	// Ventas a JSON
+	/**
+	 * Exporta los datos de ventas de DynamoDB a un archivo JSON. Recupera todas las
+	 * ventas almacenadas en DynamoDB y las escribe en un archivo JSON.
+	 * 
+	 * @param OutFilePathVentas Ruta del archivo JSON donde se guardarán los datos
+	 *                          exportados.
+	 */
 	public static void ExportarVentas(String OutFilePathVentas) {
 		ObjectMapper objectMapper = new ObjectMapper();
 		ArrayNode jsonArray = objectMapper.createArrayNode();
@@ -233,7 +275,7 @@ public class JsonHandler {
 			objectMapper.writeValue(new File(OutFilePathVentas), jsonArray);
 			LOGGER.info("Datos de Ventas exportados en el directorio: " + OutFilePathVentas);
 		} catch (IOException e) {
-			e.printStackTrace();
+			LOGGER.error("Error con la ruta especificad :" + e);
 		}
 	}
 }

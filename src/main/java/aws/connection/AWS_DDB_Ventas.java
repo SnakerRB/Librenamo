@@ -85,7 +85,7 @@ public class AWS_DDB_Ventas {
 			LOGGER.error("Error al eliminar la venta: " + e.getMessage());
 		} finally {
 			dynamoDbClient.close();
-			LOGGER.info("Cliente DB Cerrado correctamente");
+			LOGGER.trace("Cliente DB Cerrado correctamente");
 		}
 	}
 
@@ -100,8 +100,8 @@ public class AWS_DDB_Ventas {
 	 * @param valor          El nuevo valor para el atributo.
 	 * @param FechaVenta     La fecha de la venta cuyo atributo se va a editar.
 	 */
-	public static void Edit(DynamoDbClient dynamoDbClient, String ventaID, String campo, String valor,
-			String FechaVenta) {
+	public static void Edit(DynamoDbClient dynamoDbClient, String ventaID, String FechaVenta, String campo,
+			String valor) {
 		// Primero, obtenemos el objeto que deseamos editar
 		HashMap<String, AttributeValue> keyToGet = new HashMap<>();
 		keyToGet.put("VentaID", AttributeValue.builder().s(ventaID).build());
@@ -203,6 +203,19 @@ public class AWS_DDB_Ventas {
 		return null;
 	}
 
+	/**
+	 * Recupera todas las ventas de la tabla 'Ventas' en DynamoDB.
+	 * 
+	 * Este método realiza un escaneo completo de la tabla 'Ventas' en DynamoDB y
+	 * construye una lista de objetos Venta, cada uno representando una venta
+	 * individual. El método maneja la paginación de DynamoDB automáticamente y
+	 * recupera todos los registros disponibles en la tabla.
+	 * 
+	 * @param dynamoDbClient El cliente de DynamoDB utilizado para realizar
+	 *                       operaciones de base de datos.
+	 * @return Una lista de objetos Venta que representan todas las ventas
+	 *         recuperadas de DynamoDB.
+	 */
 	public static ArrayList<Venta> getAllVentas(DynamoDbClient dynamoDbClient) {
 		ArrayList<Venta> ventas = new ArrayList<>();
 

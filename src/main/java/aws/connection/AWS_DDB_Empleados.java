@@ -81,7 +81,7 @@ public class AWS_DDB_Empleados {
 			LOGGER.error("Error al eliminar el empleado: " + e.getMessage());
 		} finally {
 			dynamoDbClient.close();
-			LOGGER.info("Cliente DB Cerrado correctamente");
+			LOGGER.trace("Cliente DB Cerrado correctamente");
 		}
 	}
 
@@ -250,7 +250,7 @@ public class AWS_DDB_Empleados {
 			// el empleado existe
 			return getItemResponse.hasItem() && getItemResponse.item().containsKey("EmpleadoID");
 		} catch (DynamoDbException e) {
-			System.err.println("Error al buscar el empleado: " + e.getMessage());
+			LOGGER.error("Error al buscar el empleado: " + e.getMessage());
 			return false;
 		}
 	}
