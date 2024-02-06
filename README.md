@@ -7,7 +7,12 @@
 * **Daniel Rodriguez** - *Developer* - [SnakerRB](https://github.com/SnakerRB)
 * **Diego Alonso** - *Developer* - [DAdB03](https://github.com/DAdB03)
 
+:warning: **Caution:** Es necesario tener una cuenta de Amazon Web Services.
 
+:exclamation: **Important:** Es necesario Tener Instalada la correspondiente versión de el JDK
+
+
+:bulb: **Tip:** 
 # Sistema de Gestión AWS DynamoDB
 
 Este proyecto contiene una serie de clases diseñadas para facilitar la interacción con AWS DynamoDB, centradas en la gestión de empleados, libros, ventas y configuraciones de AWS.
@@ -54,7 +59,7 @@ Permite realizar consultas en tablas DynamoDB. Ofrece métodos para listar todos
 
 ### JsonHandler
 Maneja la importación y exportación de datos entre formatos JSON y DynamoDB. Incluye métodos para leer y almacenar datos en DynamoDB, así como para exportar datos a archivos JSON.
-[JsonHandler](https://github.com/SnakerRB/Librenamo/blob/main/src/main/java/aws/connection/JsonHandler.java
+[JsonHandler](https://github.com/SnakerRB/Librenamo/blob/main/src/main/java/aws/connection/JsonHandler.java)
 
 ### Programa
 Es el punto de entrada principal para la aplicación, permitiendo operaciones sobre registros de libros, ventas y empleados. Gestiona la interacción del usuario con la base de datos a través de un menú en consola
