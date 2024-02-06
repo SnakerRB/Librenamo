@@ -19,7 +19,7 @@
 >Este proyecto contiene una serie de clases diseñadas para facilitar la interacción con AWS DynamoDB, centradas en la gestión de empleados, libros, ventas y configuraciones de AWS.
 
 >## Manejadores de Tablas
-
+>
 >### AWS_DDB_Empleados
 >Gestiona registros de empleados en DynamoDB. Provee métodos para crear, eliminar, editar y obtener empleados, además de generar nuevos IDs de empleado y verificar la existencia de un registro.
 >[AWS_DDB_Empleados](https://github.com/SnakerRB/Librenamo/blob/main/src/main/java/aws/connection/AWS_DDB_Empleados.java)
@@ -62,7 +62,7 @@
 >### JsonHandler
 >Maneja la importación y exportación de datos entre formatos JSON y DynamoDB. Incluye métodos para leer y almacenar datos en DynamoDB, así como para exportar datos a archivos JSON.
 >[JsonHandler](https://github.com/SnakerRB/Librenamo/blob/main/src/main/java/aws/connection/JsonHandler.java)
-
+>
 >### Programa
 >Es el punto de entrada principal para la aplicación, permitiendo operaciones sobre registros de libros, ventas y empleados. Gestiona la interacción del usuario con la base de datos a través de un menú en consola
 >[Programa](https://github.com/SnakerRB/Librenamo/blob/main/src/main/java/aws/connection/Programa.java)
