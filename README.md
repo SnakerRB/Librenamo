@@ -23,7 +23,7 @@
 >### AWS_DDB_Empleados
 >Gestiona registros de empleados en DynamoDB. Provee métodos para crear, eliminar, editar y obtener empleados, además de generar nuevos IDs de empleado y verificar la existencia de un registro.
 >[AWS_DDB_Empleados](https://github.com/SnakerRB/Librenamo/blob/main/src/main/java/aws/connection/AWS_DDB_Empleados.java)
-
+>
 >### AWS_DDB_Libros
 >Se especializa en la gestión de registros de libros en DynamoDB. Ofrece funcionalidades para la creación, eliminación, edición y recuperación de registros de libros, manejo de atributos como ISBN, autor, año, etc.
 >[AWS_DDB_Libros](https://github.com/SnakerRB/Librenamo/blob/main/src/main/java/aws/connection/AWS_DDB_Libros.java)
