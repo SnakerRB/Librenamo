@@ -32,32 +32,33 @@
 >[AWS_DDB_Ventas](https://github.com/SnakerRB/Librenamo/blob/main/src/main/java/aws/connection/AWS_DDB_Ventas.java)
 
 >## Manejadores de Objeto
+>
 >### Empleado
 >Representa un empleado con atributos como ID, apellido, cargo, entre otros. Proporciona métodos para acceder y modificar estos atributos, adecuados para la integración con AWS DynamoDB.
 >[Empleado](https://github.com/SnakerRB/Librenamo/blob/main/src/main/java/aws/connection/Empleado.java)
-
+>
 >### Libro
 >Representa un libro con atributos como ISBN, autor, precio, entre otros. Incluye métodos para la manipulación de estos datos, adecuados para DynamoDB.
 >[Libro](https://github.com/SnakerRB/Librenamo/blob/main/src/main/java/aws/connection/Libro.java)
-
+>
 >### Venta
 >Representa una venta con atributos como ID de venta, total de venta, entre otros. Gestiona una lista de libros vendidos y permite modificar los atributos relevantes.
 >[Venta](https://github.com/SnakerRB/Librenamo/blob/main/src/main/java/aws/connection/Venta.java)
 
 >## Auxiliares
-
+>
 >### AWS_DDB_Login
 >Provee un cliente DynamoDB autenticado, configurándolo con credenciales de AWS. Esencial para operaciones de base de datos autenticadas.
 >[AWS_DDB_Login](https://github.com/SnakerRB/Librenamo/blob/main/src/main/java/aws/connection/AWS_DDB_Login.java)
-
+>
 >### AWS_DDB_Properties
 >Gestiona la configuración de AWS para DynamoDB. Carga propiedades desde un archivo de configuración y es clave para la autenticación y configuración de la base de datos.
 >[AWS_DDB_Properties](https://github.com/SnakerRB/Librenamo/blob/main/src/main/java/aws/connection/AWS_DDB_Properties.java)
-
+>
 >### AWS_DDB_Select
 >Permite realizar consultas en tablas DynamoDB. Ofrece métodos para listar todos los registros y buscar registros específicos.
 >[AWS_DDB_Select](https://github.com/SnakerRB/Librenamo/blob/main/src/main/java/aws/connection/AWS_DDB_Select.java)
-
+>
 >### JsonHandler
 >Maneja la importación y exportación de datos entre formatos JSON y DynamoDB. Incluye métodos para leer y almacenar datos en DynamoDB, así como para exportar datos a archivos JSON.
 >[JsonHandler](https://github.com/SnakerRB/Librenamo/blob/main/src/main/java/aws/connection/JsonHandler.java)
