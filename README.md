@@ -1,23 +1,22 @@
-## Construido con
-
-* [Maven](https://maven.apache.org/) - Manejador de Dependencias
-
 ## Autores
 
 * **Daniel Rodriguez** - *Developer* - [SnakerRB](https://github.com/SnakerRB)
 * **Diego Alonso** - *Developer* - [DAdB03](https://github.com/DAdB03)
 
-## :warning: **Caution:**
+>[!CAUTION]
+>## :warning: **Caution:**
 > Es necesario tener una cuenta de Amazon Web Services.
 
-## :exclamation:**Important:**
+>[!IMPORTANT]
+>## :exclamation:**Important:**
 >Es necesario Tener Instalada la correspondiente versión de el JDK
+>* [Maven](https://maven.apache.org/) - Manejador de Dependencias
 
-
-## :bulb: **Consejos**
+>[!NOTE]
 ># Sistema de Gestión AWS DynamoDB
 >Este proyecto contiene una serie de clases diseñadas para facilitar la interacción con AWS DynamoDB, centradas en la gestión de empleados, libros, ventas y configuraciones de AWS.
 
+>[!TIP]
 >## Manejadores de Tablas
 >
 >### AWS_DDB_Empleados
