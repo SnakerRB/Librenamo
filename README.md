@@ -1,17 +1,20 @@
 # Proyecto de Java con DynamoDB: LIBRENAMO
 
 >[!NOTE]
-># Sistema de Gestión AWS DynamoDB
->Este proyecto contiene una serie de clases diseñadas para facilitar la interacción con AWS DynamoDB, centradas en la gestión de empleados, libros, ventas y configuraciones de AWS.
+>## Sistema de Gestión AWS DynamoDB
+>Este proyecto contiene una serie de clases diseñadas para facilitar la interacción con AWS DynamoDB, centradas en la gestión de empleados, libros, ventas.
 
 >[!CAUTION]
->## :warning: **Caution:**
-> Es necesario tener una cuenta de Amazon Web Services.
+>## Requisitos previos
+> Es necesario tener una cuenta de [Amazon Web Services](https://aws.amazon.com/).
+> - Estas cuentas tiene un coste minimo asociado al uso.
 
 >[!IMPORTANT]
->## :exclamation:**Important:**
->Es necesario Tener Instalada la correspondiente versión de el JDK
->* [Maven](https://maven.apache.org/) - Manejador de Dependencias
+> Proecto montado en [Maven](https://maven.apache.org).
+> Es necesario [Java JDK](https://www.oracle.com/es/java/technologies/downloads/).
+
+>[!IMPORTANT]
+> Es necesario crear un archivo DynamoDB.properties con las credenciales de AWS 
 
 >[!TIP]
 >## Manejadores de Tablas
@@ -41,7 +44,7 @@
 >Representa una venta con atributos como ID de venta, total de venta, entre otros. Gestiona una lista de libros vendidos y permite modificar los atributos relevantes.
 >[Venta](https://github.com/SnakerRB/Librenamo/blob/main/src/main/java/aws/connection/Venta.java)
 >
->## Auxiliares
+>## Clases Auxiliares
 >
 >### AWS_DDB_Login
 >Provee un cliente DynamoDB autenticado, configurándolo con credenciales de AWS. Esencial para operaciones de base de datos autenticadas.
@@ -58,6 +61,8 @@
 >### JsonHandler
 >Maneja la importación y exportación de datos entre formatos JSON y DynamoDB. Incluye métodos para leer y almacenar datos en DynamoDB, así como para exportar datos a archivos JSON.
 >[JsonHandler](https://github.com/SnakerRB/Librenamo/blob/main/src/main/java/aws/connection/JsonHandler.java)
+>
+>## Programa principal
 >
 >### Programa
 >Es el punto de entrada principal para la aplicación, permitiendo operaciones sobre registros de libros, ventas y empleados. Gestiona la interacción del usuario con la base de datos a través de un menú en consola
