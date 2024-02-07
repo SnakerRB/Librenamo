@@ -29,7 +29,7 @@
 >### AWS_DDB_Ventas
 >Administra operaciones en la tabla "Ventas" de DynamoDB. Incluye métodos para crear, eliminar, editar y recuperar registros de ventas, así como funcionalidades adicionales como la generación de nuevos IDs de venta.
 >[AWS_DDB_Ventas](https://github.com/SnakerRB/Librenamo/blob/main/src/main/java/aws/connection/AWS_DDB_Ventas.java)
-
+>
 >## Manejadores de Objeto
 >
 >### Empleado
@@ -43,7 +43,7 @@
 >### Venta
 >Representa una venta con atributos como ID de venta, total de venta, entre otros. Gestiona una lista de libros vendidos y permite modificar los atributos relevantes.
 >[Venta](https://github.com/SnakerRB/Librenamo/blob/main/src/main/java/aws/connection/Venta.java)
-
+>
 >## Auxiliares
 >
 >### AWS_DDB_Login
