@@ -11,6 +11,7 @@
 
 >[!IMPORTANT]
 > Proecto montado en [Maven](https://maven.apache.org).
+>
 > Es necesario [Java JDK](https://www.oracle.com/es/java/technologies/downloads/).
 
 >[!IMPORTANT]
