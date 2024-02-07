@@ -1,7 +1,8 @@
-## Autores
+# Proyecto de Java con DynamoDB: LIBRENAMO
 
-* **Daniel Rodriguez** - *Developer* - [SnakerRB](https://github.com/SnakerRB)
-* **Diego Alonso** - *Developer* - [DAdB03](https://github.com/DAdB03)
+>[!NOTE]
+># Sistema de Gestión AWS DynamoDB
+>Este proyecto contiene una serie de clases diseñadas para facilitar la interacción con AWS DynamoDB, centradas en la gestión de empleados, libros, ventas y configuraciones de AWS.
 
 >[!CAUTION]
 >## :warning: **Caution:**
@@ -11,10 +12,6 @@
 >## :exclamation:**Important:**
 >Es necesario Tener Instalada la correspondiente versión de el JDK
 >* [Maven](https://maven.apache.org/) - Manejador de Dependencias
-
->[!NOTE]
-># Sistema de Gestión AWS DynamoDB
->Este proyecto contiene una serie de clases diseñadas para facilitar la interacción con AWS DynamoDB, centradas en la gestión de empleados, libros, ventas y configuraciones de AWS.
 
 >[!TIP]
 >## Manejadores de Tablas
@@ -66,6 +63,7 @@
 >Es el punto de entrada principal para la aplicación, permitiendo operaciones sobre registros de libros, ventas y empleados. Gestiona la interacción del usuario con la base de datos a través de un menú en consola
 >[Programa](https://github.com/SnakerRB/Librenamo/blob/main/src/main/java/aws/connection/Programa.java)
 
->## Comenzando
->Para utilizar estas clases, clona el repositorio y sigue las instrucciones de instalación y configuración específicas en la documentación de cada clase.
+## Autores
 
+* **Daniel Rodriguez** - *Developer* - [SnakerRB](https://github.com/SnakerRB)
+* **Diego Alonso** - *Developer* - [DAdB03](https://github.com/DAdB03)
